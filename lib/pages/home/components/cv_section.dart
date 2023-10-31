@@ -78,6 +78,10 @@ class CvSection extends StatelessWidget {
                 ),
               ),
               Expanded(
+                flex: 1,
+                child: Container()
+              ),
+              Expanded(
                 flex: 2,
                 child: HoverContainer(
                   hoverLimit: 10,
@@ -105,7 +109,7 @@ class CvSection extends StatelessWidget {
                   hoverLimit: 10,
                   child: GestureDetector(
                     onTap: () {
-                      launchUrl(Uri.parse("assets/pdf/resume.pdf"));
+                      launchUrl(Uri.parse("https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/pdf/resume.pdf"));
                     },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
