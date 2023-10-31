@@ -431,7 +431,7 @@ class HomeState extends State<Home> {
                   ),
                   title: SizedBox(
                     width: 175,
-                    child: SelectableText(
+                    child: Text(
                       e.name,
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -441,7 +441,7 @@ class HomeState extends State<Home> {
                     ),
                   ),
                   subtitle: Flexible(
-                    child: SelectableText(
+                    child: Text(
                       e.code,
                       style: TextStyle(
                           fontSize: 14
