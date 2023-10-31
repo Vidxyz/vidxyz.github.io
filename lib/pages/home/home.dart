@@ -220,6 +220,7 @@ class HomeState extends State<Home> {
                         ),
                       )
                     : ListTile(
+                        onTap: headerItems[index].onTap,
                         title: Text(
                           headerItems[index].title,
                           style: TextStyle(
@@ -432,6 +433,7 @@ class HomeState extends State<Home> {
                     width: 175,
                     child: SelectableText(
                       e.name,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold

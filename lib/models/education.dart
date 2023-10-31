@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Education {
   final String institution;
   final String description;

@@ -126,27 +126,15 @@ class _CustomCardState extends State<CustomCard>
           elevation: widget.elevation,
           child: Padding(
             padding: widget.padding,
-            child: Row(
-              mainAxisAlignment: widget.rowMainAxisAlignment,
-              crossAxisAlignment: widget.rowCrossAxisAlignment,
+            child: Column(
               children: [
                 widget.leading != null ? Spacer() : Empty(),
                 widget.leading ?? Empty(),
                 widget.leading != null ? Spacer() : Empty(),
-                Column(
-                  mainAxisAlignment: widget.columnMainAxisAlignment,
-                  crossAxisAlignment: widget.columnCrossAxisAlignment,
-                  children: [
-                    Spacer(),
-                    widget.title ?? Empty(),
-                    widget.title != null ? SizedBox(height: 8.0) : Empty(),
-                    widget.subtitle ?? Empty(),
-                    Spacer(),
-                  ],
-                ),
-                widget.trailing != null ? Spacer() : Empty(),
-                widget.trailing ?? Empty(),
-                widget.trailing != null ? Spacer() : Empty(),
+                // Spacer(),
+                widget.title ?? Empty(),
+                widget.title != null ? SizedBox(height: 8.0) : Empty(),
+                widget.subtitle ?? Empty(),
               ],
             ),
           ),

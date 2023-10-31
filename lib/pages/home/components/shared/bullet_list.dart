@@ -33,11 +33,11 @@ class InlineBulletList extends StatelessWidget {
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                           minHeight: 15,
-                          maxHeight: 100
+                          maxHeight: 200
                       ),
                       child: Text(
                         text,
-                        maxLines: 3,
+                        maxLines: 10,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16,

@@ -137,11 +137,12 @@ class EducationSection extends StatelessWidget {
                                 ),
                                 Text(
                                   education.description,
-                                  maxLines: 4,
+                                  maxLines: 10,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     color: kCaptionColor,
                                     height: 1.5,
+                                    fontSize: 15,
                                   ),
                                 ),
                                 SizedBox(

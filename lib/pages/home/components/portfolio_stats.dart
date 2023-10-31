@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:web_portfolio/models/stat.dart';
@@ -58,7 +59,7 @@ class PortfolioStats extends StatelessWidget {
                       SizedBox(
                         width: 10.0,
                       ),
-                      Text(
+                      AutoSizeText(
                         stat.text,
                         style: TextStyle(
                           fontSize: 16.0,

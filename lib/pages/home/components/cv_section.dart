@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -91,8 +92,10 @@ class CvSection extends StatelessWidget {
                     },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
+                      child: AutoSizeText(
                         "VIEW RESUME",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.oswald(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.w900,
@@ -113,8 +116,10 @@ class CvSection extends StatelessWidget {
                     },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Text(
+                      child: AutoSizeText(
                         "DOWNLOAD PDF",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.oswald(
                           color: kPrimaryColor,
                           fontWeight: FontWeight.w900,

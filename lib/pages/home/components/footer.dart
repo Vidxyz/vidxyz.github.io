@@ -78,9 +78,10 @@ class FooterState extends State<Footer> {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 50.0),
-                  child: Wrap(
-                    spacing: 20.0,
-                    runSpacing: 20.0,
+                  child: Row(
+                    // spacing: 20.0,
+                    // runSpacing: 20.0,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: footerItems
                         .map(
                           (footerItem) => Container(
@@ -120,24 +121,26 @@ class FooterState extends State<Footer> {
                                     SizedBox(
                                       height: 15.0,
                                     ),
-                                    RichText(
-                                      textAlign: TextAlign.start,
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text: "${footerItem.text1}\n",
-                                            style: TextStyle(
-                                              color: kCaptionColor,
-                                              height: 1.8,
+                                    Expanded(
+                                      child: RichText(
+                                        textAlign: TextAlign.start,
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: "${footerItem.text1}\n",
+                                              style: TextStyle(
+                                                color: kCaptionColor,
+                                                height: 1.8,
+                                              ),
                                             ),
-                                          ),
-                                          TextSpan(
-                                            text: "${footerItem.text2}\n",
-                                            style: TextStyle(
-                                              color: kCaptionColor,
-                                            ),
-                                          )
-                                        ],
+                                            TextSpan(
+                                              text: "${footerItem.text2}\n",
+                                              style: TextStyle(
+                                                color: kCaptionColor,
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     )
                                   ],
@@ -164,6 +167,7 @@ class FooterState extends State<Footer> {
                       padding: EdgeInsets.only(bottom: 8.0),
                       child: Text(
                         "Copyright (c) 2023 Vidhyasagar Harihara. All rights Reserved",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                           color: kCaptionColor,
                         ),
@@ -208,6 +212,9 @@ class FooterState extends State<Footer> {
                       ],
                     )
                   ],
+                ),
+                SizedBox(
+                  height: 50,
                 )
               ],
             );
