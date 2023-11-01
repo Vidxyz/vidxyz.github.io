@@ -62,26 +62,22 @@ class CvSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          Text(
+            "I'M A SOFTWARE ENGINEER WHO LOVES DESIGNING REACTIVE AND SCALABLE SYSTEMS",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.oswald(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              height: 1.8,
+              fontSize: 18.0,
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                flex: 8,
-                child: Text(
-                  "I'M A SOFTWARE ENGINEER WHO LOVES DESIGNING REACTIVE AND SCALABLE SYSTEMS",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    height: 1.8,
-                    fontSize: 18.0,
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container()
-              ),
               Expanded(
                 flex: 2,
                 child: HoverContainer(
@@ -135,73 +131,50 @@ class CvSection extends StatelessWidget {
           SizedBox(
             height: 100.0,
           ),
-          SizedBox(
-            height: 150,
-            child: Container(
-              child: LayoutBuilder(
-                builder: (_context, constraints) {
-                  return ResponsiveGridView.builder(
-                    padding: EdgeInsets.all(0.0),
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    alignment: Alignment.topCenter,
-                    gridDelegate: ResponsiveGridDelegate(
-                      mainAxisSpacing: 20.0,
-                      crossAxisSpacing: 20.0,
-                      maxCrossAxisExtent: ScreenHelper.isTablet(context) ||
-                              ScreenHelper.isMobile(context)
-                          ? constraints.maxWidth / 2.0
-                          : 250.0,
-                      // Hack to adjust child height
-                      childAspectRatio: ScreenHelper.isDesktop(context)
-                          ? 1
-                          : MediaQuery.of(context).size.aspectRatio * 1.5,
-                    ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  designProcesses[index].imagePath,
-                                  width: 40.0,
-                                ),
-                                SizedBox(
-                                  width: 15.0,
-                                ),
-                                Text(
-                                  designProcesses[index].title,
-                                  style: GoogleFonts.oswald(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 15.0,
-                            ),
-                            Text(
-                              designProcesses[index].subtitle,
-                              style: TextStyle(
-                                color: kCaptionColor,
-                                height: 1.5,
-                                fontSize: 14.0,
-                              ),
-                            )
-                          ],
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: designProcesses.map((p) {
+              return SizedBox(
+                height: 175,
+                width: kDesktopMaxWidth / 4,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          p.imagePath,
+                          width: 40.0,
                         ),
-                      );
-                    },
-                    itemCount: designProcesses.length,
-                  );
-                },
-              ),
-            ),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Text(
+                          p.title,
+                          style: GoogleFonts.oswald(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    Text(
+                      p.subtitle,
+                      style: TextStyle(
+                        color: kCaptionColor,
+                        height: 1.5,
+                        fontSize: 14.0,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            }).toList(),
           )
         ],
       ),

@@ -36,15 +36,16 @@ class PortfolioStats extends StatelessWidget {
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraint) {
             return Wrap(
-              spacing: 20.0,
-              runSpacing: 20.0,
+              // spacing: 20.0,
+              // runSpacing: 20.0,
+              alignment: WrapAlignment.center,
               children: stats.map((stat) {
                 return Container(
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   // Just use the helper here really
                   width: ScreenHelper.isMobile(context)
-                      ? constraint.maxWidth / 2.0 - 20
-                      : (constraint.maxWidth / 4.0 - 20),
+                      ? constraint.maxWidth
+                      : (constraint.maxWidth / 4.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_devicon/flutter_devicon.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -224,7 +225,7 @@ class SkillSection extends StatelessWidget {
                                             padding: EdgeInsets.only(left: 10.0),
                                             alignment: Alignment.centerLeft,
                                             height: 38.0,
-                                            child: Text(
+                                            child: AutoSizeText(
                                                 skill.skill,
                                             ),
                                             color: Colors.white,
@@ -361,7 +362,7 @@ class SkillSection extends StatelessWidget {
                                         padding: EdgeInsets.only(left: 10.0),
                                         alignment: Alignment.centerLeft,
                                         height: 38.0,
-                                        child: Text(skill.skill),
+                                        child: AutoSizeText(skill.skill),
                                         color: Colors.white,
                                       ),
                                     ),

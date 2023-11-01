@@ -79,8 +79,8 @@ class EducationSection extends StatelessWidget {
               builder: (context, constraints) {
                 return Container(
                   child: Wrap(
-                    spacing: 20.0,
-                    runSpacing: 20.0,
+                    // spacing: 20.0,
+                    // runSpacing: 20.0,
                     children: educationList
                         .map(
                           (education) => Container(
@@ -93,7 +93,7 @@ class EducationSection extends StatelessWidget {
                                 )
                             ),
                             padding: EdgeInsets.only(left: 30),
-                            width: constraints.maxWidth / 2 - 20.0,
+                            width: constraints.maxWidth / 1.25 - 20.0,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
