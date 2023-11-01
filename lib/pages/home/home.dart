@@ -207,7 +207,10 @@ class HomeState extends State<Home> {
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 28.0),
                           child: TextButton(
-                            onPressed: headerItems[index].onTap,
+                            onPressed: () {
+                              headerItems[index].onTap();
+                              Navigator.of(context).pop();
+                            },
                             child: Text(
                               headerItems[index].title,
                               style: TextStyle(
@@ -220,7 +223,10 @@ class HomeState extends State<Home> {
                         ),
                       )
                     : ListTile(
-                        onTap: headerItems[index].onTap,
+                        onTap: () {
+                          headerItems[index].onTap();
+                          Navigator.of(context).pop();
+                        },
                         title: Text(
                           headerItems[index].title,
                           style: TextStyle(

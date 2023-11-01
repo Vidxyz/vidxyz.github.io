@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,13 +27,28 @@ List<CarouselItemModel> carouselItems = List.generate(
           SizedBox(
             height: 18.0,
           ),
-          Text(
-            "VIDHYASAGAR\nHARIHARA",
-            style: GoogleFonts.oswald(
-              color: Colors.white,
-              fontSize: 40.0,
-              fontWeight: FontWeight.w900,
-              height: 1.3,
+          FittedBox(
+            fit: BoxFit.contain,
+            child: AutoSizeText(
+              "VIDHYASAGAR",
+              style: GoogleFonts.oswald(
+                color: Colors.white,
+                fontSize: 40.0,
+                fontWeight: FontWeight.w900,
+                height: 1.3,
+              ),
+            ),
+          ),
+          FittedBox(
+            fit: BoxFit.contain,
+            child: AutoSizeText(
+              "HARIHARA",
+              style: GoogleFonts.oswald(
+                color: Colors.white,
+                fontSize: 40.0,
+                fontWeight: FontWeight.w900,
+                height: 1.3,
+              ),
             ),
           ),
           SizedBox(
