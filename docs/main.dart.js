@@ -68202,7 +68202,7 @@ J(a){var s,r,q,p,o=null,n=t.w,m=A.b8(a,o,n).w
 if(A.b8(a,o,n).w.a.a<800){s=A.b8(a,o,n).w
 s.gmO(s)
 n=A.b8(a,o,n).w
-n.gmO(n)}r=m.a.b*0.7
+n.gmO(n)}r=m.a.b*0.8
 n=$.adv()
 $.Rf()
 q=J.Y1(5,t.q6)
