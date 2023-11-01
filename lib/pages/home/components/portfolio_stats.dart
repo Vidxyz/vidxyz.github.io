@@ -8,7 +8,7 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 final List<Stat> stats = [
   Stat(count: "50+", text: "Technologies"),
   Stat(count: "25+", text: "Projects"),
-  Stat(count: "7", text: "Years\nExperience"),
+  Stat(count: "7+", text: "Years\nExperience"),
   Stat(count: "1", text: "Patent"),
 ];
 
