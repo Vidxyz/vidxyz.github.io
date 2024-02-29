@@ -36,6 +36,13 @@ final List<FooterItem> footerItems = [
     text1: "https://www.linkedin.com/in/vidxyz/",
     text2: "",
     url: "https://www.linkedin.com/in/vidxyz/"
+  ),
+  FooterItem(
+      iconPath: "assets/github.png",
+      title: "GITHUB",
+      text1: "https://github.com/Vidxyz",
+      text2: "",
+      url: "https://github.com/Vidxyz"
   )
 ];
 
