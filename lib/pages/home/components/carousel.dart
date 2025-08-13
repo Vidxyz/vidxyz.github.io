@@ -14,7 +14,7 @@ class Carousel extends StatelessWidget {
         MediaQuery.of(context).orientation == DeviceOrientation.portraitUp;
   }
 
-  final CarouselController carouselController = CarouselController();
+  final CarouselSliderController? carouselController = CarouselSliderController();
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *

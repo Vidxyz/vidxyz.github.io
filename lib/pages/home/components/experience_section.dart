@@ -8,13 +8,26 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 
 final List<Experience> experienceList = [
   Experience(
+      companyName: "OKTA",
+      jobTitle: "SENIOR SOFTWARE ENGINEER, RELEASE AND CORESERVICES",
+      period: "May 2024 - Present \t\t|\t\t Toronto, ON",
+      points: [
+        "Led the design & implementation of a step registry framework using FastAPI, Airflow, and CircleCI, which serves as CI middleware across different systems",
+        "Devised & engineered a system to perform mandatory malware scans on all release candidates, mitigating supply chain attacks & ensuring security compliance",
+        "Engineered full-stack self-service workflows (React, FastAPI, Airflow) to automate common user requests, reducing turnaround times from days to minutes",
+        "Engineered a company-wide policy enforcer for the enforcement of short-lived Github tokens, revoking those past their deadline and compiling reports for review",
+        "Optimized to the core Okta release pipeline, cutting delivery times by 25%",
+      ],
+      iconPath: "experience/okta.png"
+  ),
+  Experience(
     companyName: "IMPROVING, OTTAWA",
     jobTitle: "DEVOPS ENGINEER",
-    period: "May 2022 - Present \t\t|\t\t Toronto, ON",
+    period: "May 2022 - May 2024 \t\t|\t\t Toronto, ON",
     points: [
+      "Led the zero-downtime migration of a 50+ GB/day logging platform from Elasticsearch to OpenSearch using Terraform and Helm",
       "Implemented GitOps (CD) with ArgoCD to configure self-healing kubernetes manifests across different clusters",
       "Developed single sign-on SSO solutions for Prometheus, AlertManager, Opensearch, and Nexus using OIDC, SAML and LDAP with Azure AD integration",
-      "Led the migration of distributed logging solution from Elasticsearch to Opensearch to handle daily ingestion of 50+ GBs of logs using Helm charts and Terraform",
       "Introduced kustomize packages to streamline deployments to various environments",
       "Audited routes and designed rules to secure VPC networks using Azure Firewall",
       "Utilized Terraform for Azure resource management and collaborated with operations teams for scheduled production releases",
@@ -28,7 +41,7 @@ final List<Experience> experienceList = [
     points: [
       "Designed Scala based APIs for key features, including exporting user login data, reconfiguring SSO providers & applying constraints & schedules to booking spaces",
       "Implemented features in react/react-native including rendering user avatars on building floorplans, creating modals for data exports as well as integrating booking schedules into a calendar-like view",
-      "Integrated in-app calendar info with user’s email calendar using Microsoft/Google Calendar APIs to ensure synchronization of changes",
+      "Integrated in-app calendar info with user’s email calendar using Microsoft/Google Calendar APIs to ensure bidrectional synchronization of changes",
       "Configured log based alerts and published them to Slack channels via web hooks for easy visibility into cluster services",
       "Managed GCP infrastructure, including updating SSL Certificates, maintaining kubernetes manifests, configuring Kafka clusters and keeping CI/CD pipelines up to date",
     ],

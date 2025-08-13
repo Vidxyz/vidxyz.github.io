@@ -13,31 +13,27 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 List<Skill> softSkills = [
   Skill(
     skill: "API Development",
-    percentage: 90,
+    percentage: 95,
   ),
   Skill(
     skill: "Cloud Infrastructure (as code)",
-    percentage: 85,
+    percentage: 90,
   ),
   Skill(
     skill: "Systems Design",
-    percentage: 80,
+    percentage: 90,
+  ),
+  Skill(
+    skill: "Databases",
+    percentage: 85,
   ),
   Skill(
     skill: "Data Pipelines",
-    percentage: 70,
-  ),
-  Skill(
-    skill: "Relational Databases",
-    percentage: 70,
-  ),
-  Skill(
-    skill: "Graph Databases",
-    percentage: 65,
+    percentage: 80,
   ),
   Skill(
     skill: "UI/UX Development",
-    percentage: 60,
+    percentage: 70,
   ),
 
 ];
@@ -52,8 +48,12 @@ List<Skill> languages = [
     percentage: 85,
   ),
   Skill(
+    skill: "Python - FastAPI / Flask / Django",
+    percentage: 85,
+  ),
+  Skill(
     skill: "Terraform - GCP / AWS / Azure",
-    percentage: 80,
+    percentage: 85,
   ),
   Skill(
     skill: "Flutter - Dart",
@@ -61,18 +61,14 @@ List<Skill> languages = [
   ),
   Skill(
     skill: "Elixir - Phoenix / Ecto",
-    percentage: 75,
+    percentage: 80,
   ),
   Skill(
     skill: "JavaScript - React / React Native / Express",
-    percentage: 75,
+    percentage: 80,
   ),
   Skill(
     skill: "Java/Kotlin - Spring / KTor / Android",
-    percentage: 70,
-  ),
-  Skill(
-    skill: "Python - Django / Flask",
     percentage: 70,
   ),
 
@@ -139,6 +135,9 @@ final extraIconAssets = [
   Tuple2("akka.png", "https://akka.io/"),
   Tuple2("play.png", "https://www.playframework.com/"),
   Tuple2("elixir.png", "https://elixir-lang.org/"),
+  Tuple2("airflow.png", "https://airflow.apache.org/"),
+  Tuple2("fastapi.png", "https://fastapi.tiangolo.com/"),
+  Tuple2("circleci.png", "https://circleci.com/"),
 ];
 
 class SkillSection extends StatelessWidget {
