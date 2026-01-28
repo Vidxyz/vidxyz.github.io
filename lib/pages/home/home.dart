@@ -253,12 +253,12 @@ class HomeState extends State<Home> {
                         child: Container(
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
-                              colors: [kAccentColor, Color(0xFFF97316)],
+                              colors: [kPrimaryColorDark, kPrimaryColor],
                             ),
                             borderRadius: BorderRadius.circular(12.0),
                             boxShadow: [
                               BoxShadow(
-                                color: kAccentColor.withOpacity(0.3),
+                                color: kPrimaryColorDark.withOpacity(0.3),
                                 blurRadius: 8,
                                 offset: Offset(0, 4),
                               ),

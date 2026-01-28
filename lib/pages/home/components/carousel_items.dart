@@ -126,7 +126,9 @@ List<CarouselItemModel> carouselItems = List.generate(
             cursor: SystemMouseCursors.click,
             child: Container(
               decoration: BoxDecoration(
-                gradient: kPrimaryGradient,
+                gradient: LinearGradient(
+                  colors: [kPrimaryColor, kPrimaryColorLight],
+                ),
                 borderRadius: BorderRadius.circular(12.0),
                 boxShadow: [
                   BoxShadow(

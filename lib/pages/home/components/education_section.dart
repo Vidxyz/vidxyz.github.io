@@ -187,7 +187,10 @@ class EducationSection extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 24),
-                                InlineBulletList(education.courseWork)
+                                InlineBulletList(
+                                  education.courseWork,
+                                  singleLine: true,
+                                )
                               ],
                             ),
                           ),

@@ -28,11 +28,11 @@ class HeaderLogo extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              gradient: kPrimaryGradient,
+              color: kPrimaryColorDark,
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: kPrimaryColor.withOpacity(0.3),
+                  color: kPrimaryColorDark.withOpacity(0.35),
                   blurRadius: 8,
                   offset: Offset(0, 4),
                 ),
@@ -50,14 +50,14 @@ class HeaderLogo extends StatelessWidget {
                       letterSpacing: 1.2,
                     ),
                   ),
-                  TextSpan(
-                    text: ".",
-                    style: GoogleFonts.inter(
-                      color: kAccentColor,
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+                TextSpan(
+                  text: ".",
+                  style: GoogleFonts.inter(
+                    color: kPrimaryColorLight,
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
                 ],
               ),
             ),
@@ -89,12 +89,12 @@ class HeaderRow extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [kAccentColor, Color(0xFFF97316)],
+                            colors: [kPrimaryColorDark, kPrimaryColor],
                           ),
                           borderRadius: BorderRadius.circular(12.0),
                           boxShadow: [
                             BoxShadow(
-                              color: kAccentColor.withOpacity(0.3),
+                              color: kPrimaryColorDark.withOpacity(0.3),
                               blurRadius: 8,
                               offset: Offset(0, 4),
                             ),
