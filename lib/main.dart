@@ -5,6 +5,7 @@ import 'package:web_portfolio/pages/home/home.dart';
 import 'package:web_portfolio/utils/constants.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -20,7 +21,13 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         canvasColor: kBackgroundColor,
-        textTheme: GoogleFonts.latoTextTheme(),
+        textTheme: GoogleFonts.interTextTheme().copyWith(
+          bodyLarge: GoogleFonts.inter(color: kTextPrimary),
+          bodyMedium: GoogleFonts.inter(color: kTextSecondary),
+          displayLarge: GoogleFonts.inter(color: kTextPrimary, fontWeight: FontWeight.bold),
+          displayMedium: GoogleFonts.inter(color: kTextPrimary, fontWeight: FontWeight.bold),
+          displaySmall: GoogleFonts.inter(color: kTextPrimary, fontWeight: FontWeight.bold),
+        ),
       ),
       builder: (context, widget) => ResponsiveBreakpoints.builder(
         // ClampingScrollWrapper.builder(context, widget),

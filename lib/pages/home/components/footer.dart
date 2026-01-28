@@ -92,46 +92,70 @@ class FooterState extends State<Footer> {
                     children: footerItems
                         .map(
                           (footerItem) => Expanded(
-                            child: Container(
-                              height: 120.0,
-                              width: ScreenHelper.isMobile(context)
-                                  ? constraints.maxWidth / 2.0 - 20.0
-                                  : constraints.maxWidth / 4.0 - 20.0,
-                              child: InkWell(
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
                                 onTap: () {
                                   launchUrl(Uri.parse(footerItem.url));
                                 },
                                 child: Container(
+                                  padding: EdgeInsets.all(24),
+                                  margin: EdgeInsets.symmetric(horizontal: 8),
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: [
+                                        kSurfaceColor,
+                                        kSurfaceColor.withOpacity(0.8),
+                                      ],
+                                    ),
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(
+                                      color: widget.toHighLight
+                                          ? kAccentColor.withOpacity(0.5)
+                                          : Colors.white.withOpacity(0.1),
+                                      width: widget.toHighLight ? 2 : 1,
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: widget.toHighLight
+                                            ? kAccentColor.withOpacity(0.2)
+                                            : Colors.black.withOpacity(0.2),
+                                        blurRadius: widget.toHighLight ? 15 : 8,
+                                        offset: Offset(0, 4),
+                                      ),
+                                    ],
+                                  ),
                                   child: Column(
+                                    mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        children: [
-                                          Image.asset(
-                                            footerItem.iconPath,
-                                            width: 25.0,
-                                            color: widget.toHighLight ? kDangerColor : kPrimaryColor,
-                                          ),
-                                          SizedBox(
-                                            width: 15.0,
-                                          ),
-                                          Expanded(
-                                            child: Text(
-                                              footerItem.title,
-                                              style: GoogleFonts.oswald(
-                                                fontSize: widget.toHighLight ? 20 : 18.0,
-                                                fontWeight: FontWeight.w700,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                      Container(
+                                        padding: EdgeInsets.all(12),
+                                        decoration: BoxDecoration(
+                                          color: (widget.toHighLight ? kAccentColor : kPrimaryColor).withOpacity(0.2),
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        child: Image.asset(
+                                          footerItem.iconPath,
+                                          width: 24.0,
+                                          color: widget.toHighLight ? kAccentColor : kPrimaryColorLight,
+                                        ),
                                       ),
-                                      SizedBox(
-                                        height: 15.0,
+                                      SizedBox(height: 16),
+                                      Text(
+                                        footerItem.title,
+                                        style: GoogleFonts.inter(
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.w700,
+                                          color: kTextPrimary,
+                                          letterSpacing: 0.5,
+                                        ),
                                       ),
-                                      Expanded(
+                                      SizedBox(height: 12),
+                                      Flexible(
+                                        fit: FlexFit.loose,
                                         child: RichText(
                                           textAlign: TextAlign.start,
                                           text: TextSpan(
@@ -141,14 +165,17 @@ class FooterState extends State<Footer> {
                                                 style: TextStyle(
                                                   color: kCaptionColor,
                                                   height: 1.8,
+                                                  fontSize: 14,
                                                 ),
                                               ),
-                                              TextSpan(
-                                                text: "${footerItem.text2}\n",
-                                                style: TextStyle(
-                                                  color: kCaptionColor,
-                                                ),
-                                              )
+                                              if (footerItem.text2.isNotEmpty)
+                                                TextSpan(
+                                                  text: "${footerItem.text2}\n",
+                                                  style: TextStyle(
+                                                    color: kCaptionColor,
+                                                    fontSize: 14,
+                                                  ),
+                                                )
                                             ],
                                           ),
                                         ),
@@ -166,14 +193,23 @@ class FooterState extends State<Footer> {
                 SizedBox(
                   height: 20.0,
                 ),
-                Center(
-                  child: Align(
-                    alignment: Alignment.center,
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 24),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(
+                        color: Colors.white.withOpacity(0.1),
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                  child: Center(
                     child: Text(
-                      "Copyright (c) 2023 Vidhyasagar Harihara. All rights Reserved",
+                      "Copyright (c) 2025 Vidhyasagar Harihara. All rights Reserved",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: kCaptionColor,
+                        fontSize: 14,
                       ),
                     ),
                   ),

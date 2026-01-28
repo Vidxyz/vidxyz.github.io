@@ -193,24 +193,37 @@ class ProjectsSection extends StatelessWidget {
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      exp.value.platforms,
-                                                      style: GoogleFonts.oswald(
-                                                        color: kPrimaryColor,
-                                                        fontWeight: FontWeight.w900,
-                                                        fontSize: 16.0,
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                                      decoration: BoxDecoration(
+                                                        color: kPrimaryColor.withOpacity(0.2),
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        border: Border.all(
+                                                          color: kPrimaryColor.withOpacity(0.5),
+                                                          width: 1,
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        exp.value.platforms,
+                                                        style: GoogleFonts.inter(
+                                                          color: kPrimaryColorLight,
+                                                          fontWeight: FontWeight.w600,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 1.0,
+                                                        ),
                                                       ),
                                                     ),
                                                     SizedBox(
-                                                      height: 15.0,
+                                                      height: 16.0,
                                                     ),
                                                     Text(
                                                       exp.value.projectName,
-                                                      style: GoogleFonts.oswald(
-                                                        color: Colors.white,
+                                                      style: GoogleFonts.inter(
+                                                        color: kTextPrimary,
                                                         fontWeight: FontWeight.w900,
-                                                        height: 1.3,
-                                                        fontSize: 35.0,
+                                                        height: 1.2,
+                                                        fontSize: 32.0,
+                                                        letterSpacing: -0.5,
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -306,8 +319,15 @@ class ProjectsSection extends StatelessWidget {
                                                             cursor: SystemMouseCursors.click,
                                                             child: Container(
                                                               decoration: BoxDecoration(
-                                                                color: kPrimaryColor,
-                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                gradient: kPrimaryGradient,
+                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: kPrimaryColor.withOpacity(0.3),
+                                                                    blurRadius: 8,
+                                                                    offset: Offset(0, 4),
+                                                                  ),
+                                                                ],
                                                               ),
                                                               height: 48.0,
                                                               padding: EdgeInsets.symmetric(
@@ -476,24 +496,37 @@ class ProjectsSection extends StatelessWidget {
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      exp.value.platforms,
-                                                      style: GoogleFonts.oswald(
-                                                        color: kPrimaryColor,
-                                                        fontWeight: FontWeight.w900,
-                                                        fontSize: 16.0,
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                                      decoration: BoxDecoration(
+                                                        color: kPrimaryColor.withOpacity(0.2),
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        border: Border.all(
+                                                          color: kPrimaryColor.withOpacity(0.5),
+                                                          width: 1,
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        exp.value.platforms,
+                                                        style: GoogleFonts.inter(
+                                                          color: kPrimaryColorLight,
+                                                          fontWeight: FontWeight.w600,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 1.0,
+                                                        ),
                                                       ),
                                                     ),
                                                     SizedBox(
-                                                      height: 15.0,
+                                                      height: 16.0,
                                                     ),
                                                     Text(
                                                       exp.value.projectName,
-                                                      style: GoogleFonts.oswald(
-                                                        color: Colors.white,
+                                                      style: GoogleFonts.inter(
+                                                        color: kTextPrimary,
                                                         fontWeight: FontWeight.w900,
-                                                        height: 1.3,
-                                                        fontSize: 35.0,
+                                                        height: 1.2,
+                                                        fontSize: 32.0,
+                                                        letterSpacing: -0.5,
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -586,8 +619,15 @@ class ProjectsSection extends StatelessWidget {
                                                             cursor: SystemMouseCursors.click,
                                                             child: Container(
                                                               decoration: BoxDecoration(
-                                                                color: kPrimaryColor,
-                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                gradient: kPrimaryGradient,
+                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: kPrimaryColor.withOpacity(0.3),
+                                                                    blurRadius: 8,
+                                                                    offset: Offset(0, 4),
+                                                                  ),
+                                                                ],
                                                               ),
                                                               height: 48.0,
                                                               padding: EdgeInsets.symmetric(
@@ -1010,24 +1050,37 @@ class ProjectsSection extends StatelessWidget {
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      exp.value.platforms,
-                                                      style: GoogleFonts.oswald(
-                                                        color: kPrimaryColor,
-                                                        fontWeight: FontWeight.w900,
-                                                        fontSize: 16.0,
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                                                      decoration: BoxDecoration(
+                                                        color: kPrimaryColor.withOpacity(0.2),
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        border: Border.all(
+                                                          color: kPrimaryColor.withOpacity(0.5),
+                                                          width: 1,
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        exp.value.platforms,
+                                                        style: GoogleFonts.inter(
+                                                          color: kPrimaryColorLight,
+                                                          fontWeight: FontWeight.w600,
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 1.0,
+                                                        ),
                                                       ),
                                                     ),
                                                     SizedBox(
-                                                      height: 15.0,
+                                                      height: 16.0,
                                                     ),
                                                     Text(
                                                       exp.value.projectName,
-                                                      style: GoogleFonts.oswald(
-                                                        color: Colors.white,
+                                                      style: GoogleFonts.inter(
+                                                        color: kTextPrimary,
                                                         fontWeight: FontWeight.w900,
-                                                        height: 1.3,
-                                                        fontSize: 35.0,
+                                                        height: 1.2,
+                                                        fontSize: 32.0,
+                                                        letterSpacing: -0.5,
                                                       ),
                                                     ),
                                                     SizedBox(
@@ -1120,8 +1173,15 @@ class ProjectsSection extends StatelessWidget {
                                                             cursor: SystemMouseCursors.click,
                                                             child: Container(
                                                               decoration: BoxDecoration(
-                                                                color: kPrimaryColor,
-                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                gradient: kPrimaryGradient,
+                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: kPrimaryColor.withOpacity(0.3),
+                                                                    blurRadius: 8,
+                                                                    offset: Offset(0, 4),
+                                                                  ),
+                                                                ],
                                                               ),
                                                               height: 48.0,
                                                               padding: EdgeInsets.symmetric(
@@ -1271,18 +1331,33 @@ class ProjectsSection extends StatelessWidget {
               height: 75,
             ),
             Center(
-              child: GestureDetector(
-                onTap: () {
-                  launchUrl(Uri.parse("https://vidxyz.github.io/resume"));
-                },
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(
-                    "VIEW MORE OF MY PROJECTS HERE",
-                    style: GoogleFonts.oswald(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 20.0,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    launchUrl(Uri.parse("https://vidxyz.github.io/resume"));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    decoration: BoxDecoration(
+                      gradient: kPrimaryGradient,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: kPrimaryColor.withOpacity(0.3),
+                          blurRadius: 12,
+                          offset: Offset(0, 6),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      "VIEW MORE OF MY PROJECTS HERE",
+                      style: GoogleFonts.inter(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18.0,
+                        letterSpacing: 0.5,
+                      ),
                     ),
                   ),
                 ),

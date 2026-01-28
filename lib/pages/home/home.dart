@@ -19,6 +19,7 @@ import 'package:web_portfolio/pages/home/components/shared/custom_card.dart';
 import 'package:web_portfolio/pages/home/components/skill_section.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
+import 'package:web_portfolio/utils/screen_helper.dart';
 
 class Home extends StatefulWidget {
 
@@ -63,99 +64,135 @@ class HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
+    scrollController.addListener(() {
+      // Scroll controller is active
+    });
 
     headerItems = [
       HeaderItem(
         title: "HOME",
         onTap: () {
-          Scrollable.ensureVisible(
-              homeSectionKey.currentContext!,
-              duration: defaultDuration
-          );
+          final context = homeSectionKey.currentContext;
+          if (context != null) {
+            Scrollable.ensureVisible(
+              context,
+              duration: defaultDuration,
+              curve: Curves.easeInOut,
+            );
+          }
         },
       ),
       HeaderItem(title: "ABOUT ME", onTap: () {
-        Scrollable.ensureVisible(
-            aboutMeSectionKey.currentContext!,
-          duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = aboutMeSectionKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(title: "SKILLS", onTap: () {
-        Scrollable.ensureVisible(
-            skillSectionKey.currentContext!,
-            duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = skillSectionKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(title: "PROJECTS", onTap: () {
-        Scrollable.ensureVisible(
-            projectsKey.currentContext!,
-            duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = projectsKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(title: "PATENTS", onTap: () {
-        Scrollable.ensureVisible(
-            patentsKey.currentContext!,
-            duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = patentsKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(title: "EXPERIENCE", onTap: () {
-        Scrollable.ensureVisible(
-            experienceKey.currentContext!,
-            duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = experienceKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(title: "EDUCATION", onTap: () {
-        Scrollable.ensureVisible(
-            educationKey.currentContext!,
-            duration: defaultDuration
-        ).then((value) =>
-            scrollController
-                .animateTo(
+        final context = educationKey.currentContext;
+        if (context != null) {
+          Scrollable.ensureVisible(
+            context,
+            duration: defaultDuration,
+            curve: Curves.easeInOut,
+          ).then((value) {
+            if (scrollController.hasClients) {
+              scrollController.animateTo(
                 scrollController.offset - toolbarHeight - 25,
                 duration: Duration(milliseconds: 100),
                 curve: Curves.easeOut
-            )
-        );
+              );
+            }
+          });
+        }
       }),
       HeaderItem(
         title: "REACH OUT",
         onTap: () {
-
           setState(() {
             toHighLight = true;
           });
@@ -166,17 +203,22 @@ class HomeState extends State<Home> {
             });
           });
 
-          Scrollable.ensureVisible(
-              reachOutKey.currentContext!,
-              duration: defaultDuration
-          ).then((value) =>
-              scrollController
-                  .animateTo(
+          final context = reachOutKey.currentContext;
+          if (context != null) {
+            Scrollable.ensureVisible(
+              context,
+              duration: defaultDuration,
+              curve: Curves.easeInOut,
+            ).then((value) {
+              if (scrollController.hasClients) {
+                scrollController.animateTo(
                   scrollController.offset - toolbarHeight - 25,
                   duration: Duration(milliseconds: 100),
                   curve: Curves.easeOut
-              )
-          );
+                );
+              }
+            });
+          }
         },
         isButton: true,
       ),
@@ -185,15 +227,23 @@ class HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    scrollController.dispose();
+    timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: Globals.scaffoldKey,
       endDrawer: Drawer(
+        backgroundColor: kBackgroundColor,
         child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 24.0,
+              horizontal: 24.0,
+              vertical: 32.0,
             ),
             child: ListView.separated(
               itemBuilder: (BuildContext context, int index) {
@@ -202,10 +252,19 @@ class HomeState extends State<Home> {
                         cursor: SystemMouseCursors.click,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: kDangerColor,
-                            borderRadius: BorderRadius.circular(8.0),
+                            gradient: LinearGradient(
+                              colors: [kAccentColor, Color(0xFFF97316)],
+                            ),
+                            borderRadius: BorderRadius.circular(12.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: kAccentColor.withOpacity(0.3),
+                                blurRadius: 8,
+                                offset: Offset(0, 4),
+                              ),
+                            ],
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 28.0),
+                          padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 16.0),
                           child: TextButton(
                             onPressed: () {
                               headerItems[index].onTap();
@@ -215,8 +274,9 @@ class HomeState extends State<Home> {
                               headerItems[index].title,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 13.0,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 0.5,
                               ),
                             ),
                           ),
@@ -227,17 +287,23 @@ class HomeState extends State<Home> {
                           headerItems[index].onTap();
                           Navigator.of(context).pop();
                         },
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         title: Text(
                           headerItems[index].title,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: kTextPrimary,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       );
               },
               separatorBuilder: (BuildContext context, int index) {
                 return SizedBox(
-                  height: 10.0,
+                  height: 8.0,
                 );
               },
               itemCount: headerItems.length,
@@ -253,7 +319,8 @@ class HomeState extends State<Home> {
                 toolbarHeight: toolbarHeight,
                 automaticallyImplyLeading: false,
                 actions: <Widget>[Container()],
-                backgroundColor: kBackgroundColor,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
                 floating: true,
                 pinned: true,
                 title: Container(
@@ -264,13 +331,24 @@ class HomeState extends State<Home> {
           },
           body: Container(
             child: Builder(builder: (context) {
-              return Scrollbar(
-                controller: scrollController,
-                child: SingleChildScrollView(
+              return Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      kBackgroundColor,
+                      kBackgroundColorLight,
+                    ],
+                  ),
+                ),
+                child: Scrollbar(
                   controller: scrollController,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 75, right: 75),
-                    child: Column(
+                  child: SingleChildScrollView(
+                    controller: scrollController,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: ScreenHelper.isMobile(context) ? 24 : 75),
+                      child: Column(
                       children: [
                         Carousel(),
                         SizedBox(
@@ -293,27 +371,28 @@ class HomeState extends State<Home> {
                         ),
                         Center(
                           key: projectsKey,
-                          child: Text(
-                            "PROJECTS",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w900,
-                              height: 1.3,
-                              fontSize: 35.0,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 25.0,
-                        ),
-                        Center(
-                          child: Text(
-                            "Here are a few cool side projects that I've worked on",
-                            style: TextStyle(
-                              color: kCaptionColor,
-                              height: 1.5,
-                              fontSize: 16.0,
-                            ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "PROJECTS",
+                                style: GoogleFonts.inter(
+                                  color: kTextPrimary,
+                                  fontWeight: FontWeight.w900,
+                                  height: 1.3,
+                                  fontSize: 42.0,
+                                  letterSpacing: -1.0,
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                "Here are a few cool side projects that I've worked on",
+                                style: TextStyle(
+                                  color: kCaptionColor,
+                                  height: 1.5,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(
@@ -327,11 +406,12 @@ class HomeState extends State<Home> {
                           key: patentsKey,
                           child: Text(
                             "PATENTS",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
+                            style: GoogleFonts.inter(
+                              color: kTextPrimary,
                               fontWeight: FontWeight.w900,
                               height: 1.3,
-                              fontSize: 35.0,
+                              fontSize: 42.0,
+                              letterSpacing: -1.0,
                             ),
                           ),
                         ),
@@ -346,11 +426,12 @@ class HomeState extends State<Home> {
                           key: experienceKey,
                           child: Text(
                             "EXPERIENCE",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
+                            style: GoogleFonts.inter(
+                              color: kTextPrimary,
                               fontWeight: FontWeight.w900,
                               height: 1.3,
-                              fontSize: 35.0,
+                              fontSize: 42.0,
+                              letterSpacing: -1.0,
                             ),
                           ),
                         ),
@@ -369,11 +450,12 @@ class HomeState extends State<Home> {
                           child: Text(
                             "GET IN TOUCH",
                             key: reachOutKey,
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
+                            style: GoogleFonts.inter(
+                              color: kTextPrimary,
                               fontWeight: FontWeight.w900,
                               height: 1.3,
-                              fontSize: 35.0,
+                              fontSize: 42.0,
+                              letterSpacing: -1.0,
                             ),
                           ),
                         ),
@@ -385,7 +467,8 @@ class HomeState extends State<Home> {
                     ),
                   ),
                 ),
-              );
+              ),
+            );
             },),
           ),
         ),
@@ -397,68 +480,90 @@ class HomeState extends State<Home> {
     return Column(
       children: patents.map((e) {
         return Center(
-          child: Container(
-            alignment: Alignment.center,
-            height: 350,
-            width: 1000,
-            child: Container(
-              width: 450,
-              height: 300,
-              padding: new EdgeInsets.fromLTRB(20,20,20,20),
-              decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: kPrimaryColor.withOpacity(0.75),
-                  boxShadow: [new BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
-                    blurRadius: 10.0,
-                    spreadRadius: 5,
-                    offset: Offset(
-                      5.0, // Move to right 10  horizontally
-                      5.0, // Move to bottom 10 Vertically
-                    ),
-
-                  ),]
-              ),
-              child: InkWell(
-                onTap: () {
-                  launchUrl(Uri.parse(e.url));
-                },
-                child: CustomCard(
-                  width: 200,
-                  height: 200,
-                  hasAnimation: true,
-                  leading: CircularContainer(
-                    width: 100,
-                    height: 100,
-                    iconSize: 50,
-                    backgroundColor: kPrimaryColor,
-                    iconColor: Colors.white,
-                    iconData: Icons.science_outlined,
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                launchUrl(Uri.parse(e.url));
+              },
+              child: Container(
+                width: 600,
+                padding: EdgeInsets.all(32),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      kSurfaceColor,
+                      kSurfaceColor.withOpacity(0.9),
+                    ],
                   ),
-                  title: SizedBox(
-                    width: 175,
-                    child: Text(
-                      e.name,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(
+                    color: kPrimaryColor.withOpacity(0.3),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: kPrimaryColor.withOpacity(0.2),
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                      offset: Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: kPrimaryColor.withOpacity(0.4),
+                            blurRadius: 12,
+                            offset: Offset(0, 6),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        Icons.science_outlined,
+                        size: 40,
+                        color: Colors.white,
                       ),
                     ),
-                  ),
-                  subtitle: Flexible(
-                    child: Text(
-                      e.code,
-                      style: TextStyle(
-                          fontSize: 14
+                    SizedBox(width: 24),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            e.name,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: kTextPrimary,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            e.code,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: kCaptionColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                  trailing: Icon(
-                    Icons.chevron_right,
-                    size: 32,
-                    color: kPrimaryColor,
-                  ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 24,
+                      color: kPrimaryColorLight,
+                    ),
+                  ],
                 ),
               ),
             ),

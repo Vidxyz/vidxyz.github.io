@@ -16,31 +16,50 @@ class HeaderLogo extends StatelessWidget {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () {
-            Scrollable.ensureVisible(
-                homeSectionKey.currentContext!,
-                duration: Duration(milliseconds: 350)
-            );
+            final context = homeSectionKey.currentContext;
+            if (context != null) {
+              Scrollable.ensureVisible(
+                context,
+                duration: Duration(milliseconds: 350),
+                curve: Curves.easeInOut,
+              );
+            }
           },
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "VH",
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              gradient: kPrimaryGradient,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: kPrimaryColor.withOpacity(0.3),
+                  blurRadius: 8,
+                  offset: Offset(0, 4),
                 ),
-                TextSpan(
-                  text: ".",
-                  style: GoogleFonts.oswald(
-                    color: kPrimaryColor,
-                    fontSize: 36.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
               ],
+            ),
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "VH",
+                    style: GoogleFonts.inter(
+                      color: Colors.white,
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ".",
+                    style: GoogleFonts.inter(
+                      color: kAccentColor,
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -69,19 +88,29 @@ class HeaderRow extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: kDangerColor,
-                          borderRadius: BorderRadius.circular(8.0),
+                          gradient: LinearGradient(
+                            colors: [kAccentColor, Color(0xFFF97316)],
+                          ),
+                          borderRadius: BorderRadius.circular(12.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: kAccentColor.withOpacity(0.3),
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
+                            ),
+                          ],
                         ),
                         padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 5.0),
+                            horizontal: 24.0, vertical: 12.0),
                         child: TextButton(
                           onPressed: item.onTap,
                           child: Text(
                             item.title,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 0.5,
                             ),
                           ),
                         ),
@@ -90,15 +119,21 @@ class HeaderRow extends StatelessWidget {
                   : MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Container(
-                        margin: EdgeInsets.only(right: 30.0),
+                        margin: EdgeInsets.only(right: 8.0),
+                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.transparent,
+                        ),
                         child: GestureDetector(
                           onTap: item.onTap,
                           child: Text(
                             item.title,
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
+                              color: kTextPrimary,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.5,
                             ),
                           ),
                         ),
@@ -162,7 +197,22 @@ class Header extends StatelessWidget {
   // Lets plan for mobile and smaller width screens
   Widget buildHeader() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+      decoration: BoxDecoration(
+        color: kSurfaceColor.withOpacity(0.8),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.1),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 20,
+            offset: Offset(0, 8),
+          ),
+        ],
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

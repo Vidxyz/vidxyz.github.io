@@ -145,67 +145,108 @@ class ExperienceSection extends StatelessWidget {
                     .asMap()
                     .entries
                         .map(
-                          (exp) => Align(
-                            alignment: exp.key % 2 == 0 ? Alignment.centerLeft : Alignment.centerRight,
-                            child: Container(
-                              padding: EdgeInsets.only(left: 30),
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                    left: BorderSide( //                   <--- right side
-                                      color: kPrimaryColor,
-                                      width: 3.0,
+                          (exp) => Container(
+                            margin: EdgeInsets.only(bottom: 40),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 4,
+                                  height: 60,
+                                  margin: EdgeInsets.only(right: 24),
+                                  decoration: BoxDecoration(
+                                    gradient: kPrimaryGradient,
+                                    borderRadius: BorderRadius.circular(2),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    padding: EdgeInsets.all(32),
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                        colors: [
+                                          kSurfaceColor,
+                                          kSurfaceColor.withOpacity(0.8),
+                                        ],
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(
+                                        color: Colors.white.withOpacity(0.1),
+                                        width: 1,
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.2),
+                                          blurRadius: 15,
+                                          offset: Offset(0, 8),
+                                        ),
+                                      ],
                                     ),
-                                  )
-                              ),
-                        width: constraints.maxWidth / 1.25 - 20.0,
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                exp.value.companyName,
-                                style: GoogleFonts.oswald(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 32.0,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              Text(
-                                exp.value.period,
-                                style: GoogleFonts.oswald(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 20.0,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20.0,
-                              ),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () {},
-                                  child: Text(
-                                    exp.value.jobTitle,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: 60,
+                                              height: 60,
+                                              padding: EdgeInsets.all(8),
+                                              decoration: BoxDecoration(
+                                                color: kPrimaryColor.withOpacity(0.2),
+                                                borderRadius: BorderRadius.circular(12),
+                                              ),
+                                              child: Image.asset(
+                                                "assets/${exp.value.iconPath}",
+                                                fit: BoxFit.contain,
+                                              ),
+                                            ),
+                                            SizedBox(width: 16),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    exp.value.companyName,
+                                                    style: GoogleFonts.inter(
+                                                      color: kTextPrimary,
+                                                      fontWeight: FontWeight.w800,
+                                                      fontSize: 28.0,
+                                                      letterSpacing: -0.5,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 8),
+                                                  Text(
+                                                    exp.value.period,
+                                                    style: GoogleFonts.inter(
+                                                      color: kCaptionColor,
+                                                      fontWeight: FontWeight.w500,
+                                                      fontSize: 14.0,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 16),
+                                        Text(
+                                          exp.value.jobTitle,
+                                          style: TextStyle(
+                                            color: kPrimaryColorLight,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        SizedBox(height: 24),
+                                        InlineBulletList(exp.value.points),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 40.0,
-                              ),
-                              InlineBulletList(exp.value.points),
-                              SizedBox(
-                                height: 50.0,
-                              ),
-                            ],
-                        ),
-                      ),
+                              ],
+                            ),
                           ),
                     )
                         .toList(),
