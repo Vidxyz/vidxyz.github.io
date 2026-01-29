@@ -23,7 +23,7 @@ final List<Experience> experienceList = [
   ),
   Experience(
     companyName: "IMPROVING, OTTAWA",
-    jobTitle: "DEVOPS ENGINEER",
+    jobTitle: "SENIOR DEVOPS ENGINEER",
     period: "May 2022 - May 2024 \t\t|\t\t Toronto, ON",
     points: [
       "Architected a cost-efficient migration of a 50+ GB/day logging platform from Elasticsearch to OpenSearch, utilizing FluentBit to reduce compute overhead & licensing costs",
@@ -37,7 +37,7 @@ final List<Experience> experienceList = [
   ),
   Experience(
     companyName: "BILLIE APP",
-    jobTitle: "FULL STACK ENGINEER",
+    jobTitle: "SENIOR FULL STACK ENGINEER",
     period: "May 2021 - May 2022 \t\t|\t\t Toronto, ON",
     points: [
       "Engineered scalable Scala APIs to govern complex authentication workflows, high-volume data exports, and real-time booking constraints",
