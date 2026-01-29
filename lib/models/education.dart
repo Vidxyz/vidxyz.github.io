@@ -1,5 +1,6 @@
 class Education {
   final String institution;
+  final String institutionUrl;
   final String description;
   final String linkName;
   final String period;
@@ -8,6 +9,7 @@ class Education {
 
   Education({
     required this.institution,
+    required this.institutionUrl,
     required this.description,
     required this.linkName,
     required this.period,

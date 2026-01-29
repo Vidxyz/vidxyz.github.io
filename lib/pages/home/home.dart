@@ -330,26 +330,30 @@ class HomeState extends State<Home> {
             ];
           },
           body: Container(
-            child: Builder(builder: (context) {
-              return Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      kBackgroundColor,
-                      kBackgroundColorLight,
-                    ],
+            child: Builder(
+              builder: (context) {
+                return Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        kBackgroundColor,
+                        kBackgroundColorLight,
+                      ],
+                    ),
                   ),
-                ),
-                child: Scrollbar(
-                  controller: scrollController,
-                  child: SingleChildScrollView(
-                    controller: scrollController,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: ScreenHelper.isMobile(context) ? 24 : 75),
-                      child: Column(
-                      children: [
+                  child: SelectionArea(
+                    child: Scrollbar(
+                      controller: scrollController,
+                      child: SingleChildScrollView(
+                        controller: scrollController,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: ScreenHelper.isMobile(context) ? 24 : 75,
+                          ),
+                          child: Column(
+                            children: [
                         Carousel(),
                         SizedBox(
                           height: 20.0,
@@ -463,13 +467,15 @@ class HomeState extends State<Home> {
                           height: 25.0,
                         ),
                         Footer(toHighLight),
-                      ],
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            );
-            },),
+                );
+              },
+            ),
           ),
         ),
       ),
