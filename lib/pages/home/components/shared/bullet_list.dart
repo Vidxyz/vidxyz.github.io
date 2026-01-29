@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/utils/constants.dart';
 
 class InlineBulletList extends StatelessWidget {
-  const InlineBulletList(this.texts, {super.key});
+  const InlineBulletList(this.texts, {this.singleLine = false, super.key});
   final List<String> texts;
+  final bool singleLine;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +38,12 @@ class InlineBulletList extends StatelessWidget {
                       ),
                       child: Text(
                         text,
-                        maxLines: 10,
+                        maxLines: singleLine ? 1 : 10,
+                        overflow: singleLine ? TextOverflow.ellipsis : TextOverflow.visible,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16,
-                          color: kCaptionColor
+                          color: kCaptionColor,
                         ),
                       ),
                     ),

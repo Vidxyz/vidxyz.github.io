@@ -190,15 +190,16 @@ class SkillSection extends StatelessWidget {
                         children: [
                           Text(
                             "SKILLS",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
+                            style: GoogleFonts.inter(
+                              color: kTextPrimary,
                               fontWeight: FontWeight.w900,
-                              fontSize: 28.0,
+                              fontSize: 36.0,
                               height: 1.3,
+                              letterSpacing: -0.5,
                             ),
                           ),
                           SizedBox(
-                            height: 15.0,
+                            height: 12.0,
                           ),
                           Text(
                             "Here is a summary of some of my top skills",
@@ -215,41 +216,58 @@ class SkillSection extends StatelessWidget {
                             children: softSkills
                                 .map(
                                   (skill) => Container(
-                                    margin: EdgeInsets.only(bottom: 15.0),
-                                    child: Row(
+                                    margin: EdgeInsets.only(bottom: 20.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Expanded(
-                                          flex: skill.percentage,
-                                          child: Container(
-                                            padding: EdgeInsets.only(left: 10.0),
-                                            alignment: Alignment.centerLeft,
-                                            height: 38.0,
-                                            child: AutoSizeText(
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Expanded(
+                                              child: Text(
                                                 skill.skill,
+                                                style: TextStyle(
+                                                  color: kTextPrimary,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
                                             ),
-                                            color: Colors.white,
+                                            Text(
+                                              "${skill.percentage}%",
+                                              style: TextStyle(
+                                                color: kPrimaryColorLight,
+                                                fontSize: 16.0,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 8),
+                                        Container(
+                                          height: 8,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(4),
+                                            color: kSurfaceColor,
+                                          ),
+                                          child: FractionallySizedBox(
+                                            alignment: Alignment.centerLeft,
+                                            widthFactor: skill.percentage / 100,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                gradient: kPrimaryGradient,
+                                                borderRadius: BorderRadius.circular(4),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    color: kPrimaryColor.withOpacity(0.5),
+                                                    blurRadius: 4,
+                                                    offset: Offset(0, 2),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(
-                                          width: 10.0,
-                                        ),
-                                        Expanded(
-                                          // remaining (blank part)
-                                          flex: 100 - skill.percentage,
-                                          child: Divider(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10.0,
-                                        ),
-                                        Text(
-                                          "${skill.percentage}%",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16.0,
-                                          ),
-                                        )
                                       ],
                                     ),
                                   ),
@@ -267,15 +285,16 @@ class SkillSection extends StatelessWidget {
               ),
               Text(
                 "TECHNOLOGIES",
-                style: GoogleFonts.oswald(
-                  color: Colors.white,
+                style: GoogleFonts.inter(
+                  color: kTextPrimary,
                   fontWeight: FontWeight.w900,
-                  fontSize: 28.0,
+                  fontSize: 36.0,
                   height: 1.3,
+                  letterSpacing: -0.5,
                 ),
               ),
               SizedBox(
-                height: 25.0,
+                height: 12.0,
               ),
               Text(
                 "Here are some technologies I'm most familiar with",
@@ -327,15 +346,16 @@ class SkillSection extends StatelessWidget {
                         children: [
                           Text(
                             "FRAMEWORKS",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
+                            style: GoogleFonts.inter(
+                              color: kTextPrimary,
                               fontWeight: FontWeight.w900,
-                              fontSize: 28.0,
+                              fontSize: 36.0,
                               height: 1.3,
+                              letterSpacing: -0.5,
                             ),
                           ),
                           SizedBox(
-                            height: 15.0,
+                            height: 12.0,
                           ),
                           Text(
                             "Here are a few things I'm most proficient in",
@@ -346,45 +366,64 @@ class SkillSection extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 15.0,
+                            height: 20.0,
                           ),
                           Column(
                             children: languages
                                 .map(
                                   (skill) => Container(
-                                margin: EdgeInsets.only(bottom: 15.0),
-                                child: Row(
+                                margin: EdgeInsets.only(bottom: 20.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Expanded(
-                                      flex: skill.percentage,
-                                      child: Container(
-                                        padding: EdgeInsets.only(left: 10.0),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            skill.skill,
+                                            style: TextStyle(
+                                              color: kTextPrimary,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "${skill.percentage}%",
+                                          style: TextStyle(
+                                            color: kPrimaryColorLight,
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8),
+                                    Container(
+                                      height: 8,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        color: kSurfaceColor,
+                                      ),
+                                      child: FractionallySizedBox(
                                         alignment: Alignment.centerLeft,
-                                        height: 38.0,
-                                        child: AutoSizeText(skill.skill),
-                                        color: Colors.white,
+                                        widthFactor: skill.percentage / 100,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            gradient: kPrimaryGradient,
+                                            borderRadius: BorderRadius.circular(4),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: kPrimaryColor.withOpacity(0.5),
+                                                blurRadius: 4,
+                                                offset: Offset(0, 2),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 10.0,
-                                    ),
-                                    Expanded(
-                                      // remaining (blank part)
-                                      flex: 100 - skill.percentage,
-                                      child: Divider(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 10.0,
-                                    ),
-                                    Text(
-                                      "${skill.percentage}%",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16.0,
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -420,6 +459,8 @@ class SkillSection extends StatelessWidget {
   _renderTechList() {
     return Wrap(
       alignment: WrapAlignment.center,
+      spacing: 16.0,
+      runSpacing: 16.0,
       children: [
         ...extraIconAssets.map((e) =>
             HoverContainer(
@@ -428,23 +469,38 @@ class SkillSection extends StatelessWidget {
                 onTap: () {
                   launchUrl(Uri.parse(e.item2));
                 },
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Container(
-                      width: 80, height: 80,
-                      child: Center(
-                        child: Container(
-                          width: 50, height: 50,
-                          child: FittedBox(
-                            fit: BoxFit.cover,
-                            child: ImageIcon(
-                              AssetImage("assets/${e.item1}"),
-                              color: Colors.grey,
-                              size: 10,
-                            ),
-                          ),
+                child: Container(
+                  width: 90,
+                  height: 90,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: kSurfaceColor,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.1),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      child: FittedBox(
+                        fit: BoxFit.cover,
+                        child: ImageIcon(
+                          AssetImage("assets/${e.item1}"),
+                          color: kCaptionColor,
+                          size: 10,
                         ),
-                      )
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -458,11 +514,30 @@ class SkillSection extends StatelessWidget {
                 onTap: () {
                   launchUrl(Uri.parse(e.item2));
                 },
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Container(
-                      width: 80, height: 80,
-                      child: Icon(e.item1, size: 60, color: Colors.grey,)),
+                child: Container(
+                  width: 90,
+                  height: 90,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: kSurfaceColor,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.1),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    e.item1,
+                    size: 50,
+                    color: kCaptionColor,
+                  ),
                 ),
               ),
             )

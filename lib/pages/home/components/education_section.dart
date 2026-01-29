@@ -64,11 +64,12 @@ class EducationSection extends StatelessWidget {
             Center(
               child: Text(
                 "EDUCATION",
-                style: GoogleFonts.oswald(
-                  color: Colors.white,
+                style: GoogleFonts.inter(
+                  color: kTextPrimary,
                   fontWeight: FontWeight.w900,
-                  fontSize: 35.0,
+                  fontSize: 42.0,
                   height: 1.3,
+                  letterSpacing: -1.0,
                 ),
               ),
             ),
@@ -84,71 +85,112 @@ class EducationSection extends StatelessWidget {
                     children: educationList
                         .map(
                           (education) => Container(
+                            padding: EdgeInsets.all(32),
                             decoration: BoxDecoration(
-                                border: Border(
-                                  left: BorderSide( //                   <--- right side
-                                    color: kPrimaryColor,
-                                    width: 3.0,
-                                  ),
-                                )
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  kSurfaceColor,
+                                  kSurfaceColor.withOpacity(0.8),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Colors.white.withOpacity(0.1),
+                                width: 1,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  blurRadius: 15,
+                                  offset: Offset(0, 8),
+                                ),
+                              ],
                             ),
-                            padding: EdgeInsets.only(left: 30),
                             width: constraints.maxWidth / 1.25 - 20.0,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  education.institution,
-                                  style: GoogleFonts.oswald(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 32.0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
-                                Text(
-                                  education.period,
-                                  style: GoogleFonts.oswald(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20.0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
-                                MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    onTap: () {},
-                                    child: Text(
-                                      education.linkName,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                        gradient: kPrimaryGradient,
+                                        borderRadius: BorderRadius.circular(12),
                                       ),
+                                      child: Icon(
+                                        Icons.school,
+                                        color: Colors.white,
+                                        size: 32,
+                                      ),
+                                    ),
+                                    SizedBox(width: 16),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            education.institution,
+                                            style: GoogleFonts.inter(
+                                              color: kTextPrimary,
+                                              fontWeight: FontWeight.w800,
+                                              fontSize: 28.0,
+                                              letterSpacing: -0.5,
+                                            ),
+                                          ),
+                                          SizedBox(height: 8),
+                                          Text(
+                                            education.period,
+                                            style: GoogleFonts.inter(
+                                              color: kCaptionColor,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 14.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 20),
+                                Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                  decoration: BoxDecoration(
+                                    color: kPrimaryColor.withOpacity(0.2),
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: kPrimaryColor.withOpacity(0.5),
+                                      width: 1,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    education.linkName,
+                                    style: TextStyle(
+                                      color: kPrimaryColorLight,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 20.0,
-                                ),
+                                SizedBox(height: 20),
                                 Text(
                                   education.description,
                                   maxLines: 10,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
                                     color: kCaptionColor,
-                                    height: 1.5,
+                                    height: 1.6,
                                     fontSize: 15,
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 40.0,
-                                ),
-                                InlineBulletList(education.courseWork)
+                                SizedBox(height: 24),
+                                InlineBulletList(
+                                  education.courseWork,
+                                  singleLine: true,
+                                )
                               ],
                             ),
                           ),

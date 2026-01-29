@@ -37,20 +37,40 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js" ></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=3340916662');
-      });
-    }
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "3536800705";
   </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
   <script>
-    head.js("main.dart.js?version=3", function() {
-      document.getElementById('loader').remove();
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          }).catch(function(error) {
+            console.error('Error initializing Flutter app:', error);
+            const loader = document.getElementById('loader');
+            if (loader) {
+              loader.innerHTML = '<p style="color: white; padding: 20px;">Error loading application. Please rebuild with: flutter build web</p>';
+            }
+          });
+        }
+      });
+    });
+
+    // Remove loader when Flutter app is ready
+    window.addEventListener('flutter-first-frame', function () {
+      const loader = document.getElementById('loader');
+      if (loader) {
+        loader.remove();
+      }
     });
   </script>
-  <!-- <script src="" type="application/javascript"
-  onendload="document.getElementById('loader').remove();"></script> -->
 </body>
 </html>

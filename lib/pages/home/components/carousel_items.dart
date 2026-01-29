@@ -16,54 +16,75 @@ List<CarouselItemModel> carouselItems = List.generate(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            "SOFTWARE ENGINEER",
-            style: GoogleFonts.oswald(
-              color: kPrimaryColor,
-              fontWeight: FontWeight.w900,
-              fontSize: 16.0,
-            ),
-          ),
-          SizedBox(
-            height: 18.0,
-          ),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: AutoSizeText(
-              "VIDHYASAGAR",
-              style: GoogleFonts.oswald(
-                color: Colors.white,
-                fontSize: 40.0,
-                fontWeight: FontWeight.w900,
-                height: 1.3,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: kPrimaryColor.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: kPrimaryColor.withOpacity(0.5),
+                width: 1,
               ),
             ),
-          ),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: AutoSizeText(
-              "HARIHARA",
-              style: GoogleFonts.oswald(
-                color: Colors.white,
-                fontSize: 40.0,
-                fontWeight: FontWeight.w900,
-                height: 1.3,
+            child: Text(
+              "SOFTWARE ENGINEER",
+              style: GoogleFonts.inter(
+                color: kPrimaryColorLight,
+                fontWeight: FontWeight.w600,
+                fontSize: 14.0,
+                letterSpacing: 2.0,
               ),
             ),
           ),
           SizedBox(
-            height: 10.0,
+            height: 24.0,
+          ),
+          ShaderMask(
+            shaderCallback: (bounds) => kPrimaryGradient.createShader(bounds),
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: AutoSizeText(
+                "VIDHYASAGAR",
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 72.0,
+                  fontWeight: FontWeight.w900,
+                  height: 1.1,
+                  letterSpacing: -1.0,
+                ),
+              ),
+            ),
+          ),
+          ShaderMask(
+            shaderCallback: (bounds) => kPrimaryGradient.createShader(bounds),
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: AutoSizeText(
+                "HARIHARA",
+                style: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 72.0,
+                  fontWeight: FontWeight.w900,
+                  height: 1.1,
+                  letterSpacing: -1.0,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           Text(
             "Problem solver, Tech explorer",
             style: TextStyle(
               color: kCaptionColor,
-              fontSize: 15.0,
-              height: 1.0,
+              fontSize: 18.0,
+              height: 1.5,
+              fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(
-            height: 10.0,
+            height: 16.0,
           ),
           Container(
             child: Wrap(
@@ -72,7 +93,7 @@ List<CarouselItemModel> carouselItems = List.generate(
                   "Need an opinion? ",
                   style: TextStyle(
                     color: kCaptionColor,
-                    fontSize: 15.0,
+                    fontSize: 16.0,
                     height: 1.5,
                   ),
                 ),
@@ -86,8 +107,11 @@ List<CarouselItemModel> carouselItems = List.generate(
                       "Got a project?",
                       style: TextStyle(
                         height: 1.5,
-                        color: Colors.white,
-                        fontSize: 15.0,
+                        color: kPrimaryColorLight,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                        decoration: TextDecoration.underline,
+                        decorationColor: kPrimaryColorLight,
                       ),
                     ),
                   ),
@@ -96,18 +120,27 @@ List<CarouselItemModel> carouselItems = List.generate(
             ),
           ),
           SizedBox(
-            height: 25.0,
+            height: 32.0,
           ),
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: Container(
               decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(8.0),
+                gradient: LinearGradient(
+                  colors: [kPrimaryColor, kPrimaryColorLight],
+                ),
+                borderRadius: BorderRadius.circular(12.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: kPrimaryColor.withOpacity(0.4),
+                    blurRadius: 12,
+                    offset: Offset(0, 6),
+                  ),
+                ],
               ),
-              height: 48.0,
+              height: 56.0,
               padding: EdgeInsets.symmetric(
-                horizontal: 28.0,
+                horizontal: 40.0,
               ),
               child: TextButton(
                 onPressed: () {
@@ -117,8 +150,9 @@ List<CarouselItemModel> carouselItems = List.generate(
                   "Let's talk",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.5,
                   ),
                 ),
               ),
@@ -130,6 +164,16 @@ List<CarouselItemModel> carouselItems = List.generate(
     image: HoverContainer(
       hoverLimit: 40,
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: kPrimaryColor.withOpacity(0.3),
+              blurRadius: 40,
+              spreadRadius: 10,
+            ),
+          ],
+        ),
         child: Image.asset(
           "assets/person_asset_2.png",
           fit: BoxFit.contain,
