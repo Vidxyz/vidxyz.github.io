@@ -97,22 +97,20 @@ List<CarouselItemModel> carouselItems = List.generate(
                     height: 1.5,
                   ),
                 ),
-                GestureDetector(
+                InkWell(
+                  mouseCursor: SystemMouseCursors.click,
                   onTap: () {
                     launchUrl(Uri.parse("mailto:vdhysgr@gmail.com"));
                   },
-                  child: MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: Text(
-                      "Got a project?",
-                      style: TextStyle(
-                        height: 1.5,
-                        color: kPrimaryColorLight,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.underline,
-                        decorationColor: kPrimaryColorLight,
-                      ),
+                  child: Text(
+                    "Got a project?",
+                    style: TextStyle(
+                      height: 1.5,
+                      color: kPrimaryColorLight,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.underline,
+                      decorationColor: kPrimaryColorLight,
                     ),
                   ),
                 )
@@ -125,38 +123,38 @@ List<CarouselItemModel> carouselItems = List.generate(
           MouseRegion(
             cursor: SystemMouseCursors.click,
             child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [kPrimaryColor, kPrimaryColorLight],
-                ),
-                borderRadius: BorderRadius.circular(12.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: kPrimaryColor.withOpacity(0.4),
-                    blurRadius: 12,
-                    offset: Offset(0, 6),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [kPrimaryColor, kPrimaryColorLight],
                   ),
-                ],
-              ),
-              height: 56.0,
-              padding: EdgeInsets.symmetric(
-                horizontal: 40.0,
-              ),
-              child: TextButton(
-                onPressed: () {
-                  launchUrl(Uri.parse("mailto:vdhysgr@gmail.com"));
-                },
-                child: Text(
-                  "Let's talk",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
+                  borderRadius: BorderRadius.circular(12.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: kPrimaryColor.withOpacity(0.4),
+                      blurRadius: 12,
+                      offset: Offset(0, 6),
+                    ),
+                  ],
+                ),
+                height: 56.0,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 40.0,
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse("mailto:vdhysgr@gmail.com"));
+                  },
+                  child: Text(
+                    "Let's talk",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                    ),
                   ),
                 ),
               ),
-            ),
           )
         ],
       ),

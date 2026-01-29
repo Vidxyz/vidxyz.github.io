@@ -466,6 +466,7 @@ class SkillSection extends StatelessWidget {
             HoverContainer(
               hoverLimit: 25,
               child: InkWell(
+                mouseCursor: SystemMouseCursors.click,
                 onTap: () {
                   launchUrl(Uri.parse(e.item2));
                 },
@@ -511,6 +512,7 @@ class SkillSection extends StatelessWidget {
             HoverContainer(
               hoverLimit: 25,
               child: InkWell(
+                mouseCursor: SystemMouseCursors.click,
                 onTap: () {
                   launchUrl(Uri.parse(e.item2));
                 },

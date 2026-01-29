@@ -99,33 +99,32 @@ class CvSection extends StatelessWidget {
             children: [
               Expanded(
                 flex: 2,
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      launchUrl(Uri.parse("https://vidxyz.github.io/resume"));
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                      decoration: BoxDecoration(
-                        color: kSurfaceColor,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: kPrimaryColor.withOpacity(0.3),
-                          width: 1.5,
-                        ),
+                child: InkWell(
+                  mouseCursor: SystemMouseCursors.click,
+                  borderRadius: BorderRadius.circular(12),
+                  onTap: () {
+                    launchUrl(Uri.parse("https://vidxyz.github.io/resume"));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                    decoration: BoxDecoration(
+                      color: kSurfaceColor,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: kPrimaryColor.withOpacity(0.3),
+                        width: 1.5,
                       ),
-                      child: Center(
-                        child: AutoSizeText(
-                          "VIEW RESUME",
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
-                            color: kPrimaryColorLight,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15.0,
-                            letterSpacing: 0.5,
-                          ),
+                    ),
+                    child: Center(
+                      child: AutoSizeText(
+                        "VIEW RESUME",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.inter(
+                          color: kPrimaryColorLight,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ),
@@ -135,36 +134,35 @@ class CvSection extends StatelessWidget {
               SizedBox(width: 16),
               Expanded(
                 flex: 2,
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: () {
-                      launchUrl(Uri.parse("https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/pdf/resume.pdf"));
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                      decoration: BoxDecoration(
-                        gradient: kPrimaryGradient,
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            color: kPrimaryColor.withOpacity(0.3),
-                            blurRadius: 8,
-                            offset: Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: AutoSizeText(
-                          "DOWNLOAD PDF",
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15.0,
-                            letterSpacing: 0.5,
-                          ),
+                child: InkWell(
+                  mouseCursor: SystemMouseCursors.click,
+                  borderRadius: BorderRadius.circular(12),
+                  onTap: () {
+                    launchUrl(Uri.parse("https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/pdf/resume.pdf"));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                    decoration: BoxDecoration(
+                      gradient: kPrimaryGradient,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: kPrimaryColor.withOpacity(0.3),
+                          blurRadius: 8,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: AutoSizeText(
+                        "DOWNLOAD PDF",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.inter(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15.0,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ),

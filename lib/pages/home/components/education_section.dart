@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/models/education.dart';
 import 'package:web_portfolio/pages/home/components/shared/bullet_list.dart';
 import 'package:web_portfolio/pages/home/home.dart';
@@ -11,6 +12,7 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 final List<Education> educationList = [
   Education(
     institution: "University of Waterloo",
+    institutionUrl: "https://uwaterloo.ca/",
     description:
         "Five year in-person degree constituting 8 academic terms along with 6 co-op work terms",
     linkName: "Honours Computer Science",
@@ -108,7 +110,7 @@ class EducationSection extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            width: constraints.maxWidth / 1.25 - 20.0,
+                            width: constraints.maxWidth - 40.0,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -132,13 +134,21 @@ class EducationSection extends StatelessWidget {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            education.institution,
-                                            style: GoogleFonts.inter(
-                                              color: kTextPrimary,
-                                              fontWeight: FontWeight.w800,
-                                              fontSize: 28.0,
-                                              letterSpacing: -0.5,
+                                          InkWell(
+                                            mouseCursor: SystemMouseCursors.click,
+                                            onTap: () {
+                                              launchUrl(Uri.parse(education.institutionUrl));
+                                            },
+                                            child: Text(
+                                              education.institution,
+                                              style: GoogleFonts.inter(
+                                                color: kTextPrimary,
+                                                fontWeight: FontWeight.w800,
+                                                fontSize: 28.0,
+                                                letterSpacing: -0.5,
+                                                decoration: TextDecoration.underline,
+                                                decorationColor: kPrimaryColorLight,
+                                              ),
                                             ),
                                           ),
                                           SizedBox(height: 8),
@@ -187,9 +197,12 @@ class EducationSection extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 24),
-                                InlineBulletList(
-                                  education.courseWork,
-                                  singleLine: true,
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: InlineBulletList(
+                                    education.courseWork,
+                                    singleLine: true,
+                                  ),
                                 )
                               ],
                             ),

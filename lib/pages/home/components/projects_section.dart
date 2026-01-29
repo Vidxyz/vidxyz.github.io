@@ -404,6 +404,7 @@ class ProjectsSection extends StatelessWidget {
                                                                 height: 60,
                                                                 width: 120,
                                                                 child: InkWell(
+                                                                  mouseCursor: SystemMouseCursors.click,
                                                                   onTap: () {
                                                                     launchUrl(Uri.parse(exp.value.appStoreLink!));
                                                                   },
@@ -427,6 +428,7 @@ class ProjectsSection extends StatelessWidget {
                                                                 height: 70,
                                                                 width: 135,
                                                                 child: InkWell(
+                                                                  mouseCursor: SystemMouseCursors.click,
                                                                   onTap: () {
                                                                     launchUrl(Uri.parse(exp.value.playStoreLink!));
                                                                   },
@@ -705,6 +707,7 @@ class ProjectsSection extends StatelessWidget {
                                                               height: 60,
                                                               width: 120,
                                                               child: InkWell(
+                                                                mouseCursor: SystemMouseCursors.click,
                                                                 onTap: () {
                                                                   launchUrl(Uri.parse(exp.value.appStoreLink!));
                                                                 },
@@ -726,6 +729,7 @@ class ProjectsSection extends StatelessWidget {
                                                               height: 70,
                                                               width: 135,
                                                               child: InkWell(
+                                                                mouseCursor: SystemMouseCursors.click,
                                                                 onTap: () {
                                                                   launchUrl(Uri.parse(exp.value.playStoreLink!));
                                                                 },
@@ -978,6 +982,7 @@ class ProjectsSection extends StatelessWidget {
                                                                 height: 60,
                                                                 width: 120,
                                                                 child: InkWell(
+                                                                  mouseCursor: SystemMouseCursors.click,
                                                                   onTap: () {
                                                                     launchUrl(Uri.parse(exp.value.appStoreLink!));
                                                                   },
@@ -999,6 +1004,7 @@ class ProjectsSection extends StatelessWidget {
                                                                 height: 70,
                                                                 width: 135,
                                                                 child: InkWell(
+                                                                  mouseCursor: SystemMouseCursors.click,
                                                                   onTap: () {
                                                                     launchUrl(Uri.parse(exp.value.playStoreLink!));
                                                                   },

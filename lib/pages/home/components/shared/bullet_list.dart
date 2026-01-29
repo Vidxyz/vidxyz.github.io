@@ -14,43 +14,49 @@ class InlineBulletList extends StatelessWidget {
       widgetList.add(
           Padding(
             padding: const EdgeInsets.only(top: 2.5, bottom: 2.5),
-            child: IntrinsicWidth(
-              child: Row(
-                children: [
-                  const SizedBox(
-                    height: 15,
-                    child: SizedBox(
-                      width: 7.5,
-                      height: 7.5,
-                      child: Center(
-                        child: CircleAvatar(
-                          backgroundColor: kCaptionColor,
-                        ),
+            child: Row(
+              children: [
+                const SizedBox(
+                  height: 15,
+                  child: SizedBox(
+                    width: 7.5,
+                    height: 7.5,
+                    child: Center(
+                      child: CircleAvatar(
+                        backgroundColor: kCaptionColor,
                       ),
                     ),
                   ),
-                  SizedBox(width: 15,),
-                  Expanded(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                          minHeight: 15,
-                          maxHeight: 200
-                      ),
-                      child: Text(
-                        text,
-                        maxLines: singleLine ? 1 : 10,
-                        overflow: singleLine ? TextOverflow.ellipsis : TextOverflow.visible,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: kCaptionColor,
+                ),
+                const SizedBox(width: 15),
+                Expanded(
+                  child: singleLine
+                      ? FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            text,
+                            maxLines: 1,
+                            softWrap: false,
+                            overflow: TextOverflow.visible,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: kCaptionColor,
+                            ),
+                          ),
+                        )
+                      : Text(
+                          text,
+                          maxLines: 10,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: kCaptionColor,
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
-                  // WidgetUtils.spacer(2)
-                ],
-              ),
+                ),
+              ],
             ),
           )
       );
