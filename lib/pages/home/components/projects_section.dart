@@ -12,7 +12,7 @@ final List<Project> projectsList = [
       projectName: "BuyIt",
       platforms: "Web",
       description: "Etsy-like e-commerce platform built with scale in mind",
-      tech: "Kotlin, Scala, Go, React, Terraform, Kubernetes, Postgres",
+      tech: "Kotlin, Scala, Go, React, Kafka, Terraform, Kubernetes, Postgres, Opensearch",
       asset: "dev_buyit.png",
       keyFeatures: [
         "Reactive system involving payments, catalog, inventory, checkout and fulfilment",
