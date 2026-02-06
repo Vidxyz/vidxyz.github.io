@@ -9,6 +9,36 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 
 final List<Project> projectsList = [
   Project(
+      projectName: "BuyIt",
+      platforms: "Web",
+      description: "Etsy-like e-commerce platform built with scale in mind",
+      tech: "Kotlin, Scala, Go, React, Terraform, Kubernetes, Postgres",
+      asset: "dev_buyit.png",
+      keyFeatures: [
+        "Reactive system involving payments, catalog, inventory, checkout and fulfilment",
+        "Double-entry ledger as single source of truth.",
+        "Stripe integration to handle payments, refunds, chargebacks and payouts"
+        "Consistent cart and inventory management for enhanced user experience",
+        "Auth0 integration for role based user experience across web platforms",
+        "Hybrid search and autocomplete with embeddings using OpenSearch"
+      ],
+      repoUrl: "https://github.com/Vidxyz/paypoc"
+  ),
+  Project(
+      projectName: "Balderdash",
+      platforms: "Web",
+      description: "Host your party and play an online version of the popular board game",
+      tech: "Phoenix, React, Elixir, Typescript, Terraform, Kubernetes",
+      asset: "dev_balderdash.png",
+      keyFeatures: [
+        "React real-time multiplayer application using Phoenix channels and websockets",
+        "Live game state backed by persistence using PostgreSQL",
+        "Redis-backed PubSub for scalable multi-replica broadcast"
+            "Full game loop: lobby, rounds, voting, scoring, timers",
+      ],
+      repoUrl: "https://github.com/Vidxyz/balderdash"
+  ),
+  Project(
       projectName: "Fitcentive",
       platforms: "IOS / ANDROID / WEB",
       description: "Social fitness app aimed at helping you discover people with similar interests to help you on your journey.",
