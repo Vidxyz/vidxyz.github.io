@@ -29,19 +29,24 @@ def fix_service_worker():
     with open(manifest_file, 'rb') as f:
         manifest_hash = hashlib.md5(f.read()).hexdigest()[:32]
 
-    # Update existing hashes if present
+    # Update existing hashes if present (use replacement function to avoid
+    # re interpreting \1 + "8" as invalid group ref \18 when hash starts with 8)
     updated = False
     if '"assets/AssetManifest.json"' in sw_content:
+        def repl_assets(m):
+            return m.group(1) + manifest_hash + m.group(2)
         sw_content = re.sub(
             r'("assets/AssetManifest\.json":\s*")[^"]+(")',
-            r'\1' + manifest_hash + r'\2',
+            repl_assets,
             sw_content
         )
         updated = True
     if '"AssetManifest.json"' in sw_content:
+        def repl_plain(m):
+            return m.group(1) + manifest_hash + m.group(2)
         sw_content = re.sub(
             r'("AssetManifest\.json":\s*")[^"]+(")',
-            r'\1' + manifest_hash + r'\2',
+            repl_plain,
             sw_content
         )
         updated = True
@@ -54,13 +59,14 @@ def fix_service_worker():
     print("AssetManifest.json not found in service worker, adding it...")
     
     # Find the RESOURCES object and add the entry after AssetManifest.bin.json
+    # Use replacement function so \1 + hash never looks like \18 when hash starts with 8
     pattern = r'("assets/AssetManifest\.bin\.json":\s*"[^"]+",)'
-    replacement = (
-        r'\1\n"assets/AssetManifest.json": "' + manifest_hash + '",'
-        + r'\n"AssetManifest.json": "' + manifest_hash + '",'
-    )
-    
-    new_content = re.sub(pattern, replacement, sw_content)
+    def repl_add(m):
+        return (
+            m.group(1) + '\n"assets/AssetManifest.json": "' + manifest_hash + '",'
+            + '\n"AssetManifest.json": "' + manifest_hash + '",'
+        )
+    new_content = re.sub(pattern, repl_add, sw_content)
     
     if new_content != sw_content:
         with open(sw_file, 'w') as f:
@@ -71,11 +77,12 @@ def fix_service_worker():
         print("Could not find insertion point in service worker")
         # Try alternative pattern
         pattern2 = r'("assets/FontManifest\.json":\s*"[^"]+",)'
-        replacement2 = (
-            r'\1\n"assets/AssetManifest.json": "' + manifest_hash + '",'
-            + r'\n"AssetManifest.json": "' + manifest_hash + '",'
-        )
-        new_content = re.sub(pattern2, replacement2, sw_content)
+        def repl_add2(m):
+            return (
+                m.group(1) + '\n"assets/AssetManifest.json": "' + manifest_hash + '",'
+                + '\n"AssetManifest.json": "' + manifest_hash + '",'
+            )
+        new_content = re.sub(pattern2, repl_add2, sw_content)
         
         if new_content != sw_content:
             with open(sw_file, 'w') as f:
