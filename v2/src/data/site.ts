@@ -3,7 +3,7 @@ export const assetBase =
 
 export const site = {
   name: "Vidhyasagar Harihara",
-  role: "Senior Software Engineer",
+  role: "Software Engineer",
   tagline: "Problem solver, Tech explorer",
   intro:
     "I design and build scalable systems, cloud platforms, and product experiences that keep teams fast and customers happy.",
