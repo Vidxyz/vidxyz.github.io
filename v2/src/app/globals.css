@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f7fb;
+  --bg-elev: #eef2f7;
+  --surface: #ffffff;
+  --surface-strong: #e2e8f0;
+  --text: #0b1220;
+  --muted: #52617a;
+  --muted-strong: #6b7c98;
+  --border: rgba(15, 23, 42, 0.12);
+  --teal: #0ea5a0;
+  --teal-soft: #67e8f9;
+  --teal-dark: #0f766e;
+  --accent: #0ea5e9;
+  --glow: rgba(14, 165, 160, 0.22);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(14, 165, 160, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 5%, rgba(14, 165, 233, 0.12), transparent 45%),
+    linear-gradient(180deg, #f7f9fc 0%, #ffffff 38%, #eef2f7 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(20, 184, 166, 0.35);
+  color: #ffffff;
+}
+
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-6xl px-6 py-20 sm:px-10;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl;
+  }
+
+  .section-subtitle {
+    @apply mt-3 max-w-2xl text-sm leading-7 text-[color:var(--muted)] sm:text-base;
+  }
+
+  .card {
+    @apply rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)]/98 p-6 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.28)] transition hover:-translate-y-0.5 hover:border-[color:var(--teal)];
+  }
+
+  .glass {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.8));
+    backdrop-filter: blur(14px);
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-[color:var(--teal-soft)] bg-[color:var(--teal-dark)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_10px_24px_-18px_var(--glow)];
+  }
+
+  .gradient-text {
+    background: linear-gradient(120deg, var(--teal), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[color:var(--teal)] to-[color:var(--accent)] text-white shadow-[0_12px_30px_-18px_var(--glow)] hover:translate-y-[-1px] hover:shadow-[0_18px_30px_-18px_var(--glow)];
+  }
+
+  .btn-secondary {
+    @apply border border-[color:var(--border)] bg-white text-[color:var(--text)] hover:border-[color:var(--teal)] hover:text-[color:var(--teal-dark)];
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-[color:var(--border)] bg-[color:var(--bg-elev)] px-3 py-1 text-xs text-[color:var(--muted)];
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.reveal--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      240px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      rgba(14, 165, 160, 0.18),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+}
