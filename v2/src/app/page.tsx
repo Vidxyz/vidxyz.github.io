@@ -339,7 +339,7 @@ export default function Home() {
                   <p className="text-sm text-[color:var(--muted)]">{education.period}</p>
                 </div>
               </div>
-              <span className="chip">{education.program}</span>
+              <span className="pill">{education.program}</span>
               <p className="text-sm leading-7 text-[color:var(--muted)]">
                 {education.description}
               </p>

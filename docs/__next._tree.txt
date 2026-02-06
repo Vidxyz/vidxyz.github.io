@@ -33,4 +33,4 @@
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_president.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_carpedia.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_flappybird.png","image"]
-0:{"buildId":"-BHzp1vcPyAx9OZoD6PFB","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"vUUjbGanghrM63ZW185ZM","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
