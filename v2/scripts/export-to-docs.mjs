@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, rm } from "node:fs/promises";
+import { cp, mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const repoRoot = path.resolve(process.cwd(), "..");
@@ -21,4 +21,5 @@ await Promise.all(
 );
 
 await cp(outDir, docsDir, { recursive: true });
+await writeFile(path.join(docsDir, ".nojekyll"), "");
 console.log("Deployed v2 static export to /docs");
