@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
 type NavItem = {
   label: string;
@@ -16,6 +17,7 @@ type StickyHeaderProps = {
 export default function StickyHeader({ name, navItems, onEmail }: StickyHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -66,6 +68,44 @@ export default function StickyHeader({ name, navItems, onEmail }: StickyHeaderPr
           <a href={`mailto:${onEmail}`} className="btn btn-primary">
             Let&apos;s talk
           </a>
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            onClick={() => setIsOpen((value) => !value)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[color:var(--text)] transition hover:border-[color:var(--teal-soft)] md:hidden"
+          >
+            {isOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
+          </button>
+        </div>
+      </div>
+      <div
+        className={[
+          "md:hidden",
+          isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+        ].join(" ")}
+      >
+        <div
+          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 top-[72px] bg-black/20 backdrop-blur-[2px]"
+        />
+        <div
+          className={[
+            "relative overflow-hidden border-t border-[color:var(--border)] bg-white/95 transition-all duration-300",
+            isOpen ? "max-h-96" : "max-h-0",
+          ].join(" ")}
+        >
+          <nav className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-4 text-sm text-[color:var(--muted)] sm:px-10">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="rounded-lg px-3 py-2 transition hover:bg-white/10 hover:text-[color:var(--teal-dark)]"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
       <div className="h-[2px] w-full bg-transparent">

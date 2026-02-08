@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/43184eea455613e1.css","style"]
+:HL["/_next/static/chunks/ef7550dcae0f9339.css","style"]
 :HL["/_next/static/media/0c89a48fa5027cee-s.p.4564287c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a343f882a40d2cc9-s.p.71e1367e.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/linkedin.png","image"]
@@ -29,4 +29,4 @@
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/azure.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/akka.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/play.png","image"]
-0:{"buildId":"mDYiyfKNOCjfVMji8TmqT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"lBJMOwnN8G7RMHGDWPVx1","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
