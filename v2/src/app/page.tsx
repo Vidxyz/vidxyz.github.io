@@ -66,7 +66,10 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const technologyIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+const technologyIcons: Record<
+  string,
+  React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
+> = {
   Scala: SiScala,
   AWS: SiAmazonwebservices,
   React: SiReact,
