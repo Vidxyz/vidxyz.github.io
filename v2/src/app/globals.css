@@ -71,6 +71,10 @@ body {
     @apply inline-flex items-center gap-2 rounded-full border border-[color:var(--teal-soft)] bg-[color:var(--teal-dark)] px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-[0_10px_24px_-18px_var(--glow)];
   }
 
+  .pill-invert {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/20 bg-white text-xs font-semibold uppercase tracking-[0.18em] text-slate-900 shadow-[0_10px_24px_-18px_rgba(255,255,255,0.35)];
+  }
+
   .gradient-text {
     background: linear-gradient(120deg, var(--teal), var(--accent));
     -webkit-background-clip: text;

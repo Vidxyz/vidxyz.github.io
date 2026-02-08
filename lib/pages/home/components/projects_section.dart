@@ -34,7 +34,7 @@ final List<Project> projectsList = [
         "React real-time multiplayer application using Phoenix channels and websockets",
         "Live game state backed by persistence using PostgreSQL",
         "Redis-backed PubSub for scalable multi-replica broadcast"
-            "Full game loop: lobby, rounds, voting, scoring, timers",
+        "Full game loop: lobby, rounds, voting, scoring, timers",
       ],
       repoUrl: "https://github.com/Vidxyz/balderdash"
   ),
