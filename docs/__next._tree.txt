@@ -29,4 +29,4 @@
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/azure.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/akka.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/play.png","image"]
-0:{"buildId":"NXlq-XJtJPyMWmHDU6GzS","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"mDYiyfKNOCjfVMji8TmqT","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

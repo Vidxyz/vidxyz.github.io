@@ -487,8 +487,8 @@ export default function Home() {
         <section id="education" className="section">
           <SectionHeader
             eyebrow="Education"
-            title="Academic foundation with real-world co-op impact."
-            subtitle="Strong computer science fundamentals with applied industry experience."
+            title="Academic foundation with real-world co-op experience"
+            subtitle="Strong computer science fundamentals with applied industry experience"
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
             <SpotlightCard className="card glass flex flex-col gap-5">
