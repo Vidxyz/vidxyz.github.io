@@ -44,6 +44,7 @@ import {
   SiUbuntu,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
+import { FiGlobe } from "react-icons/fi";
 import {
   designProcess,
   education,
@@ -428,7 +429,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap gap-3 pt-2">
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
                     {project.repo ? (
                       <a href={project.repo} className="btn btn-primary">
                         View repo
@@ -436,17 +437,33 @@ export default function Home() {
                     ) : null}
                     {project.website ? (
                       <a href={project.website} className="btn btn-primary">
+                        <FiGlobe className="h-4 w-4" />
                         Live site
                       </a>
                     ) : null}
                     {project.appStore ? (
-                      <a href={project.appStore} className="btn btn-primary">
-                        App Store
+                      <a
+                        href={project.appStore}
+                        className="flex h-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 px-4 transition hover:border-[color:var(--teal-soft)]"
+                      >
+                        <img
+                          src="https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/app-store-badge.png"
+                          alt="Download on the App Store"
+                          className="h-8 w-auto object-contain"
+                        />
                       </a>
                     ) : null}
                     {project.playStore ? (
-                      <a href={project.playStore} className="btn btn-primary">
-                        Google Play
+                      <a
+                        href={project.playStore}
+                        className="flex h-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 px-4 transition hover:border-[color:var(--teal-soft)]"
+                      >
+                        <img
+                          src="https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/google-play-badge.png"
+                          alt="Get it on Google Play"
+                          className="h-8 w-auto object-contain"
+                          style={{ transform: "scale(1.4)" }}
+                        />
                       </a>
                     ) : null}
                   </div>
