@@ -218,8 +218,8 @@ export default function Home() {
         <section id="about" className="section pt-0">
           <SectionHeader
             eyebrow="About"
-            title="Designing systems with clarity, resilience, and momentum."
-            subtitle="I love building backend platforms, cloud infrastructure, and developer tooling that unlocks speed for the teams I work with."
+            title="I'm a software engineer who loves designing reactive and scalable systems"
+            subtitle="I love building product platforms, cloud infrastructure, and developer tooling that unlocks speed for the teams I work with"
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <SpotlightCard className="card glass">
@@ -231,7 +231,7 @@ export default function Home() {
                 systems.
               </p>
               <p className="mt-4 text-sm leading-7 text-[color:var(--muted)]">
-                {site.intro} When a product grows, I enjoy shaping the infrastructure,
+                {site.intro} <br /> <br /> When a product grows, I enjoy shaping the infrastructure,
                 automation, and developer workflows that keep it reliable.
               </p>
             </SpotlightCard>
@@ -274,8 +274,8 @@ export default function Home() {
         <section id="skills" className="section">
           <SectionHeader
             eyebrow="Skills"
-            title="Strategy, execution, and the tools to deliver."
-            subtitle="Deep experience across backend engineering, cloud infrastructure, and platform reliability."
+            title="Here is a summary of some of my top skills"
+            subtitle="Deep experience across product engineering, cloud infrastructure, and platform reliability"
           />
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <SpotlightCard className="card glass flex flex-col gap-6">
@@ -331,8 +331,8 @@ export default function Home() {
         <section id="experience" className="section">
           <SectionHeader
             eyebrow="Experience"
-            title="Building infrastructure and platforms across teams."
-            subtitle="Leadership roles spanning developer foundations, DevOps, and full-stack delivery."
+            title="Building platforms and experiences across teams"
+            subtitle="Leadership roles spanning developer foundations, DevOps, and full-stack delivery"
           />
           <div className="mt-10 grid gap-6">
             {experience.map((item) => (
@@ -371,8 +371,8 @@ export default function Home() {
         <section id="patents" className="section">
           <SectionHeader
             eyebrow="Patents"
-            title="Recognized innovation."
-            subtitle="Applied research and intellectual property that enables real-world fraud detection."
+            title="Recognized innovation"
+            // subtitle="Applied research and intellectual property that enables real-world fraud detection."
           />
           <div className="mt-8 grid gap-4">
             {patents.map((patent) => (
@@ -398,8 +398,8 @@ export default function Home() {
         <section id="projects" className="section">
           <SectionHeader
             eyebrow="Projects"
-            title="Selected builds with real-world impact."
-            subtitle="From consumer apps to infrastructure platforms, each project reflects an obsession with scale and reliability."
+            title="Here are a few cool side projects that I've worked on"
+            subtitle="From consumer apps to games, each project reflects an obsession with learning and utility"
           />
           <div className="mt-10 grid gap-8">
             {projects.map((project) => (
@@ -529,7 +529,7 @@ export default function Home() {
             <SectionHeader
               eyebrow="Reach out"
               title="Have a project in mind?"
-              subtitle="Let’s collaborate on infrastructure, developer experience, or product strategy."
+              subtitle="Let's talk"
               align="center"
             />
             <div className="flex flex-wrap items-center justify-center gap-4">
@@ -539,6 +539,17 @@ export default function Home() {
               <a href={site.resumeUrl} className="btn btn-secondary">
                 View resume
               </a>
+            </div>
+            <div className="flex items-center justify-center gap-3 text-sm text-[color:var(--muted)]">
+              {site.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 transition hover:border-[color:var(--teal-soft)]"
+                >
+                  <img src={link.icon} alt={link.label} className="h-4 w-4" />
+                </a>
+              ))}
             </div>
             </SpotlightCard>
           </Reveal>
