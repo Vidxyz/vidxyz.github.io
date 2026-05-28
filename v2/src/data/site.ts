@@ -137,6 +137,56 @@ export const skills = {
 
 export const projects = [
   {
+    name: "DealMeIn",
+    platforms: "Web",
+    description:
+      "A virtual card table for your phone. Create a room, deal cards privately to each player, and play any card game — no physical deck needed.",
+    tech: "Next.js, TypeScript, Hono, Cloudflare Workers, Durable Objects, WebSockets",
+    image: `${assetBase}/dev_dealmein.png`,
+    repo: "https://github.com/Vidxyz/playing-cards",
+    website: "https://dealmein.vercel.app/",
+    highlights: [
+      "One Durable Object per room holds authoritative game state with real-time WebSocket sync",
+      "Cards redacted server-side before broadcast — players never receive cards they shouldn't see",
+      "Supports President, Blackjack, Poker (Texas Hold'em), Euchre, Cambio, and Bluff",
+      "WebSocket Hibernation API keeps idle rooms essentially free on Cloudflare's free tier",
+      "Zone-based visibility model makes the engine game-agnostic — new games need no engine changes",
+    ],
+  },
+  {
+    name: "moviguessr",
+    platforms: "Web",
+    description:
+      "Guess the movie from its blurred poster. The image gradually sharpens as the timer counts down — pick from four choices before time runs out.",
+    tech: "Next.js, TypeScript, Hono, Cloudflare Workers, TMDB",
+    image: `${assetBase}/dev_moviguessr.png`,
+    repo: "https://github.com/Vidxyz/movie-guesser",
+    website: "https://moviguessr.vercel.app/",
+    highlights: [
+      "Poster starts heavily blurred and clears progressively over the countdown",
+      "Three difficulty levels control blur intensity and timer tightness",
+      "~600-title curated pool with TMDB CDN poster images — no API key required",
+      "Speed and streak multipliers reward early correct guesses",
+    ],
+  },
+  {
+    name: "tickrguessr",
+    platforms: "Web",
+    description:
+      "Guess the stock from its price chart. Study the trendline across five time windows, then pick from four options. Build streaks, earn points.",
+    tech: "Next.js, TypeScript, Hono, Cloudflare Workers, TradingView lightweight-charts",
+    image: `${assetBase}/dev_tickrguessr.png`,
+    repo: "https://github.com/Vidxyz/stock-guesser",
+    website: "https://tickrguessr.vercel.app/",
+    highlights: [
+      "Price charts normalised to % change from window start — shape only, no prices or dates shown",
+      "Switch freely between 5D / 1M / 6M / 1Y / 5Y time windows before committing a guess",
+      "Four multiple-choice options: one correct, one same-sector decoy, two random",
+      "Speed and streak multipliers — up to 2× score for sustained correct guesses",
+      "Cloudflare Worker backend with per-window Yahoo Finance caching to keep requests minimal",
+    ],
+  },
+  {
     name: "BuyIt",
     platforms: "Web",
     description: "Etsy-like e-commerce platform built with scale in mind",
