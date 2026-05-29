@@ -154,6 +154,21 @@ export const projects = [
     ],
   },
   {
+    name: "BuyIt",
+    platforms: "Web",
+    description: "Etsy-like e-commerce platform built with scale in mind",
+    tech: "Kotlin, Scala, Go, React, Kafka, Terraform, Kubernetes, Postgres, Opensearch",
+    image: `${assetBase}/dev_buyit.png`,
+    repo: "https://github.com/Vidxyz/paypoc",
+    highlights: [
+      "Reactive system involving payments, catalog, inventory, checkout and fulfilment",
+      "Double-entry ledger as single source of truth.",
+      "Stripe integration to handle payments, refunds, chargebacks and payouts",
+      "Auth0 integration for role based user experience across web platforms",
+      "Hybrid search and autocomplete with embeddings using OpenSearch",
+    ],
+  },
+  {
     name: "moviguessr",
     platforms: "Web",
     description:
@@ -184,21 +199,6 @@ export const projects = [
       "Four multiple-choice options: one correct, one same-sector decoy, two random",
       "Speed and streak multipliers — up to 2× score for sustained correct guesses",
       "Cloudflare Worker backend with per-window Yahoo Finance caching to keep requests minimal",
-    ],
-  },
-  {
-    name: "BuyIt",
-    platforms: "Web",
-    description: "Etsy-like e-commerce platform built with scale in mind",
-    tech: "Kotlin, Scala, Go, React, Kafka, Terraform, Kubernetes, Postgres, Opensearch",
-    image: `${assetBase}/dev_buyit.png`,
-    repo: "https://github.com/Vidxyz/paypoc",
-    highlights: [
-      "Reactive system involving payments, catalog, inventory, checkout and fulfilment",
-      "Double-entry ledger as single source of truth.",
-      "Stripe integration to handle payments, refunds, chargebacks and payouts",
-      "Auth0 integration for role based user experience across web platforms",
-      "Hybrid search and autocomplete with embeddings using OpenSearch",
     ],
   },
   {

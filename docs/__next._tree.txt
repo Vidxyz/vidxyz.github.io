@@ -17,9 +17,9 @@
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/experience/intel.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/experience/sap.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_dealmein.png","image"]
+:HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_buyit.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_moviguessr.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_tickrguessr.png","image"]
-:HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_buyit.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_balderdash.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/dev_header.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/app-store-badge.png","image"]
@@ -32,4 +32,4 @@
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/azure.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/akka.png","image"]
 :HL["https://raw.githubusercontent.com/Vidxyz/vidxyz.github.io/master/assets/play.png","image"]
-0:{"buildId":"yZeS5WwNoQS5VXxdAZLh1","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"gN0FmxikeCjcwg01h4Df2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
